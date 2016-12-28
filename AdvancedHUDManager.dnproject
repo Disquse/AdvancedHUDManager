@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project author="Disquse" authorOS="Windows 10" createdAt="1465906843883" ideName="DevelNext" ideVersion="16 rc-2" ideVersionHash="2016122612" name="AdvancedHUDManager" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1482925635212">
+<project author="Disquse" authorOS="Windows 10" createdAt="1465906843883" ideName="DevelNext" ideVersion="16 rc-2" ideVersionHash="2016122612" name="AdvancedHUDManager" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1482936409393">
   <openedFiles>
   <file src="~project"/>
-    <file src="src/.forms/Main.fxml"/>
+    <file selected="1" src="src/.forms/Main.fxml"/>
     <file src="src/.forms/Welcome.fxml"/>
     <file src="src/.forms/Manager.fxml"/>
     <file src="src/.forms/Customize.fxml"/>
     <file src="src/.forms/Settings.fxml"/>
-    <file selected="1" src="src/.scripts/Module"/>
+    <file src="src/.scripts/Module"/>
     <file src="src/.scripts/Checker"/>
   </openedFiles>
   <files>
@@ -428,12 +428,14 @@
     </file>
     <file inRootDir="1" src="src/app/forms/test.php"/>
     <file inRootDir="1" src="src/.forms/test.conf"/>
-    <file inRootDir="1" src="lib"/>
-    <file inRootDir="1" src="src"/>
     <file inRootDir="1" src="src/app/forms/Setting.behaviour"/>
     <file inRootDir="1" src="src/app/forms/Setting.php.axml"/>
     <file inRootDir="1" src="src/app/forms/test.behaviour"/>
     <file inRootDir="1" src="src/app/forms/test.php.axml"/>
+    <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/Setting.fxml.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/test.fxml.conf"/>
+    <file inRootDir="1" src="lib"/>
+    <file inRootDir="1" src="src"/>
     <file inRootDir="1" src="build"/>
     <file inRootDir="1" src="~project"/>
     <file inRootDir="1" src="src_generated"/>

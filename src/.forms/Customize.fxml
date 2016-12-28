@@ -132,19 +132,17 @@
                         <FXCollections fx:factory="observableArrayList"/>
                       </items>
                     </ListViewEx>
-                    <Data cursor="DEFAULT" enabled="1" id="data-listViewAlt" visible="1"/>
                   </children>
                   <titleFont>
                     <Font name="System Regular" size="12"/>
                   </titleFont>
                 </Panel>
-                <Data cursor="DEFAULT" enabled="1" id="data-panel" visible="1"/>
                 <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="ColorsUpdateListButton" layoutX="8" layoutY="280" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Update list" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
                   <font>
                     <Font name="Verdana" size="16"/>
                   </font>
                 </FlatButton>
-                <Data cursor="DEFAULT" enabled="1" id="data-button5" visible="1"/>
+                <Data id="data-ColorsUpdateListButton"/>
               </children>
             </AnchorPane>
           </content>

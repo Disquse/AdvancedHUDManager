@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.web.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570" prefWidth="880" styleClass="">
   <children>
+    <Panel backgroundColor="#ffffff00" borderColor="#000000" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="Outline" layoutX="0" layoutY="105" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="464" prefWidth="880" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children/>
+      <titleFont>
+        <Font name="System Regular" size="12"/>
+      </titleFont>
+    </Panel>
+    <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="Bugfix" layoutX="12" layoutY="276" prefHeight="30" prefWidth="880" styleClass="label " text="It's not a clicker, m-kay?" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="14"/>
+      </font>
+    </LabelEx>
     <GameBackground focusTraversable="false" height="100" id="background" layoutX="0" layoutY="0" styleClass="without-focus " width="880"/>
     <Panel backgroundColor="#00000000" borderColor="#000000" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="HeaderOutline" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="102" prefWidth="880" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
       <children/>
@@ -9,17 +20,6 @@
       </titleFont>
     </Panel>
     <GameBackground focusTraversable="false" height="98" id="HeaderXmasBackground" layoutX="1" layoutY="1" opacity="0.6" styleClass="without-focus " width="878"/>
-    <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="Bugfix" layoutX="0" layoutY="540" prefHeight="30" prefWidth="880" styleClass="label " text="It's not a clicker, m-kay?" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
-      <font>
-        <Font name="Verdana Bold" size="14"/>
-      </font>
-    </LabelEx>
-    <Panel backgroundColor="#ffffff00" borderColor="#000000" borderRadius="0" borderStyle="SOLID" borderWidth="1" focusTraversable="false" id="Outline" layoutX="0" layoutY="105" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="464" prefWidth="880" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
-      <children/>
-      <titleFont>
-        <Font name="System Regular" size="12"/>
-      </titleFont>
-    </Panel>
     <Data cursor="DEFAULT" enabled="1" id="data-HeaderOutline" visible="1"/>
     <Data cursor="DEFAULT" enabled="1" id="data-MenuPanel" visible="1"/>
     <Data cursor="DEFAULT" enabled="1" id="data-Outline" visible="1"/>
@@ -130,11 +130,17 @@
       </titleFont>
     </Panel>
     <Data cursor="DEFAULT" enabled="1" id="data-background" image=".data/img/ahudmbg.jpg" velocityX="-1" visible="1"/>
-    <GamePane backgroundColor="#1a1a1a" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="Forms" layoutX="0" layoutY="169" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="400" prefWidth="878" styleClass="without-focus " titleColor="#000000" titleOffset="15" titlePosition="TOP_LEFT">
+    <GamePane backgroundColor="#1a1a1a" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="Forms" layoutX="1" layoutY="171" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="400" prefWidth="878" styleClass="without-focus " titleColor="#000000" titleOffset="15" titlePosition="TOP_LEFT">
       <titleFont>
         <Font name="System Regular" size="12"/>
       </titleFont>
       <children>
+        <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="0" prefWidth="0" styleClass="">
+          <children/>
+        </AnchorPane>
+        <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="0" prefWidth="0" styleClass="">
+          <children/>
+        </AnchorPane>
         <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="0" prefWidth="0" styleClass="">
           <children/>
         </AnchorPane>

@@ -149,10 +149,10 @@ class Main extends AbstractForm
         waitAsync(150, function () use ($event) {
             $this->Forms->phys->loadScene('Welcome');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
-        });     
-        waitAsync(1500, function () use ($event) {
-            $this->Bugfix->visible = true;
-        });           
+        });    
+        waitAsync(300, function () use ($event) { 
+            Animation::moveTo($this->Forms, 150, 1.0, 170.0);
+        });          
     }
     
     /**
@@ -170,10 +170,7 @@ class Main extends AbstractForm
         waitAsync(150, function () use ($event) {
             $this->Forms->phys->loadScene('Manager');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
-        });  
-        waitAsync(1500, function () use ($event) {
-            $this->Bugfix->visible = true;
-        });             
+        });               
     }
     
     /**
@@ -191,10 +188,7 @@ class Main extends AbstractForm
         waitAsync(150, function () use ($event) {
             $this->Forms->phys->loadScene('Customize');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
-        });  
-        waitAsync(1500, function () use ($event) {
-            $this->Bugfix->visible = true;
-        });                 
+        });                
     }
     
     /**
@@ -213,9 +207,7 @@ class Main extends AbstractForm
             //$this->Forms->phys->loadScene('Other');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
         });  
-        waitAsync(1500, function () use ($event) {
-            $this->Bugfix->visible = true;
-        });           
+          
     }
     
     /**
@@ -233,10 +225,7 @@ class Main extends AbstractForm
         waitAsync(150, function () use ($event) {
             $this->Forms->phys->loadScene('Settings');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
-        });  
-        waitAsync(1500, function () use ($event) {
-            $this->Bugfix->visible = true;
-        });           
+        });             
     }
     
     /**
@@ -314,7 +303,7 @@ class Main extends AbstractForm
     function doBugfixClickLeft(UXMouseEvent $event = null)
     {    
         $this->Bugfix->visible = false;
-        Animation::moveTo($this->Forms, 250, 1.0, 170.0);           
+        $this->Forms->y = 171;         
     }    
 
     /**
