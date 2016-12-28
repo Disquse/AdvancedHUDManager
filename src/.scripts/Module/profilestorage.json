@@ -1,0 +1,1 @@
+{"id":"profilestorage","ideType":"develnext\\bundle\\sql\\components\\SqliteStorageComponent","type":"bundle\\sql\\SqliteStorage","x":32,"y":160,"properties":{"disabled":false,"path":"profilesstorage.dat","autoSave":"1"}}

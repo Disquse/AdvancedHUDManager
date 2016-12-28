@@ -1,0 +1,1 @@
+{"id":"timerchecker","ideType":"ide\\scripts\\elements\\TimerScriptComponent","type":"script\\TimerScript","x":32,"y":272,"properties":{"interval":2000,"repeatable":true,"autoStart":true}}

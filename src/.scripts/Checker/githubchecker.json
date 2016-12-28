@@ -1,0 +1,1 @@
+{"id":"githubchecker","ideType":"develnext\\bundle\\httpclient\\components\\HttpCheckerComponent","type":"bundle\\http\\HttpChecker","x":32,"y":144,"properties":{"url":"https://api.github.com/rate_limit","checkInterval":"10000","autoStart":true}}

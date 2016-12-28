@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<behaviours>
+  <target id="button">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="SettingsProfilesSetDefault">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="SettingsProfilesEdit">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="SettingsProfilesRemove">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="SettingsProfilesTF2DirectoryBrowse">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="SettingsProfilesTF2DirectorySave">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+</behaviours>

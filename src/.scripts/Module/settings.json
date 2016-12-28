@@ -1,0 +1,1 @@
+{"id":"settings","ideType":"develnext\\bundle\\sql\\components\\SqliteStorageComponent","type":"bundle\\sql\\SqliteStorage","x":32,"y":16,"properties":{"disabled":false,"path":"settings.dat","autoSave":"1"}}

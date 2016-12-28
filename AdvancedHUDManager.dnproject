@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project author="Disquse" authorOS="Windows 10" createdAt="1465906843883" ideName="DevelNext" ideVersion="16 rc-2" ideVersionHash="2016122612" name="AdvancedHUDManager" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1482925635212">
+  <openedFiles>
+  <file src="~project"/>
+    <file src="src/.forms/Main.fxml"/>
+    <file src="src/.forms/Welcome.fxml"/>
+    <file src="src/.forms/Manager.fxml"/>
+    <file src="src/.forms/Customize.fxml"/>
+    <file src="src/.forms/Settings.fxml"/>
+    <file selected="1" src="src/.scripts/Module"/>
+    <file src="src/.scripts/Checker"/>
+  </openedFiles>
+  <files>
+  <file inRootDir="1" src="src/app/prototypes"/>
+    <file inRootDir="1" src="src/.scripts"/>
+    <file inRootDir="1" src="src/.theme/style-ide.css"/>
+    <file inRootDir="1" src="src/.system/application.conf"/>
+    <file inRootDir="1" src="src/.scripts/AppModule">
+      <links>
+        <link src="src/app/modules/AppModule.php"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/modules/AppModule.php"/>
+    <file inRootDir="1" src="src/.scripts/MainModule"/>
+    <file inRootDir="1" src="src/app/modules/MainModule.php"/>
+    <file inRootDir="1" src="src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/app/forms/MainForm.php"/>
+    <file inRootDir="1" src="src/.forms/MainForm.conf"/>
+    <file inRootDir="1" src="vendor/ide.bundle.std.JPHPGuiDesktopBundle"/>
+    <file inRootDir="1" src="lib"/>
+    <file inRootDir="1" src="vendor/ide.bundle.std.JPHPCoreBundle"/>
+    <file inRootDir="1" src="vendor/ide.bundle.std.JPHPRuntimeBundle"/>
+    <file inRootDir="1" src="vendor/ide.bundle.std.JPHPJsonBundle"/>
+    <file inRootDir="1" src="vendor/ide.bundle.std.JPHPXmlBundle"/>
+    <file inRootDir="1" src="vendor/ide.bundle.std.JPHPDesktopDebugBundle"/>
+    <file inRootDir="1" src="src/app/forms"/>
+    <file inRootDir="1" src="src/.system/modules.json"/>
+    <file inRootDir="1" src="src/.forms"/>
+    <file generated="1" inRootDir="1" src="src/JPHP-INF/.bootstrap"/>
+    <file generated="1" inRootDir="1" src="src/JPHP-INF/launcher.conf"/>
+    <file inRootDir="1" src="src"/>
+    <file inRootDir="1" src="src_generated"/>
+    <file inRootDir="1" src="src/.game/sprites"/>
+    <file inRootDir="1" src="src/.theme/style.css"/>
+    <file inRootDir="1" src="build"/>
+    <file inRootDir="1" src=""/>
+    <file inRootDir="1" src="~project"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.jsoup.JsoupBundle"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.jsoup.JsoupBundle/script/JsoupScript.php"/>
+    <file inRootDir="1" src="src/app/modules/MainModule.json"/>
+    <file inRootDir="1" src="src/app/modules/MainModule.php.source"/>
+    <file inRootDir="1" src="src/app/modules/MainModule.php.sourcemap"/>
+    <file inRootDir="1" src="src/app/modules/MainModule.behaviour"/>
+    <file inRootDir="1" src="src/app/modules/MainModule.php.axml"/>
+    <file inRootDir="1" src="src/app/modules/AppModule.json"/>
+    <file inRootDir="1" src="src/app/modules/AppModule.php.source"/>
+    <file inRootDir="1" src="src/app/modules/AppModule.php.sourcemap"/>
+    <file inRootDir="1" src="src/app/modules/AppModule.behaviour"/>
+    <file inRootDir="1" src="src/app/modules/AppModule.php.axml"/>
+    <file inRootDir="1" src="src/.scripts/Module">
+      <links>
+        <link src="src/app/modules/Module.php"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/modules/Module.php"/>
+    <file inRootDir="1" src="src/.forms/Main.fxml">
+      <links>
+        <link src="src/app/forms/Main.php"/>
+        <link src="src/.forms/Main.conf"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/forms/Main.php"/>
+    <file inRootDir="1" src="src/.forms/Main.conf"/>
+    <file inRootDir="1" src="src/.data"/>
+    <file inRootDir="1" src="src/.data/img"/>
+    <file inRootDir="1" src="src/C:/Users/Disquse/Desktop/ahudmbg.png"/>
+    <file inRootDir="1" src="src/.data/img/ahudmbg.png"/>
+    <file inRootDir="1" src="application.pid"/>
+    <file inRootDir="1" src="src/.debug/bootstrap.php"/>
+    <file inRootDir="1" src="src/.debug/preloader.php"/>
+    <file inRootDir="1" src="src/app"/>
+    <file inRootDir="1" src="src/C:/Users/Disquse/Desktop/ahudmbg.jpg"/>
+    <file inRootDir="1" src="src/.data/img/ahudmbg.jpg"/>
+    <file inRootDir="1" src="src/.data/img/ahudmbg2.jpg"/>
+    <file inRootDir="1" src="src/C:/Users/Disquse/Desktop/ahudmlogo.png"/>
+    <file inRootDir="1" src="src/.data/img/ahudmlogo.png"/>
+    <file inRootDir="1" src="src/.forms/Welcome.fxml">
+      <links>
+        <link src="src/app/forms/Welcome.php"/>
+        <link src="src/.forms/Welcome.conf"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/forms/Welcome.php"/>
+    <file inRootDir="1" src="src/.forms/Welcome.conf"/>
+    <file inRootDir="1" src="src/.forms/Manager.fxml">
+      <links>
+        <link src="src/app/forms/Manager.php"/>
+        <link src="src/.forms/Manager.conf"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/forms/Manager.php"/>
+    <file inRootDir="1" src="src/.forms/Manager.conf"/>
+    <file inRootDir="1" src="AdvancedHUDManager.dnproject"/>
+    <file inRootDir="1" src="~doc"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/Advanced HUD Manager/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/.data/img/SanAndreasInstallerPanoram2.png"/>
+    <file inRootDir="1" src="src/.data/img/logo.png"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/SanAndreasInstaller/src/.forms/Main.fxml"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/combo-array2/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/.data/img/bg1.png"/>
+    <file inRootDir="1" src="src/.data/img/ground.png"/>
+    <file inRootDir="1" src="src/.data/img/tubeUp.png"/>
+    <file inRootDir="1" src="src/.data/img/tubeDown.png"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/SanAndreasInstaller/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/.data/img/aac14807-5938-436e-b3c6-40ee5c3ca728-1452385008602.png"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/GitHub API/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="vendor/ide.bundle.std.UIDesktopBundle"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.game2d.Game2DBundle"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/regTest/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/ForKovalenko/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/Maket/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/.data/img/refresh-button.png"/>
+    <file inRootDir="1" src="src/.data/img/search.png"/>
+    <file inRootDir="1" src="src/.data/img/edit (1).png"/>
+    <file inRootDir="1" src="src/.data/img/settings (2)2.png"/>
+    <file inRootDir="1" src="src/.data/img/menu (1).png"/>
+    <file inRootDir="1" src="src/.data/img/heart2.png"/>
+    <file inRootDir="1" src="src/.data/img/chat.png"/>
+    <file inRootDir="1" src="src/.data/img/megaphone.png"/>
+    <file inRootDir="1" src="src/.data/img/down-arrow2.png"/>
+    <file inRootDir="1" src="src/.forms/Customize.fxml">
+      <links>
+        <link src="src/app/forms/Customize.php"/>
+        <link src="src/.forms/Customize.conf"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/forms/Customize.php"/>
+    <file inRootDir="1" src="src/.forms/Customize.conf"/>
+    <file inRootDir="1" src="src/.debug"/>
+    <file inRootDir="1" src="src/.scripts/Module/backupdirchooser.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/huddirchooser.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/iniahudm.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/inilogs.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/iniprofiles.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/inisettings.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/makelog.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/profilesrefresh.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/tfdirchooser.json"/>
+    <file inRootDir="1" src="src/.system"/>
+    <file inRootDir="1" src="src/.theme"/>
+    <file inRootDir="1" src="src/app/forms/Customize.behaviour"/>
+    <file inRootDir="1" src="src/app/forms/Customize.php.axml"/>
+    <file inRootDir="1" src="src/app/forms/Customize.php.source"/>
+    <file inRootDir="1" src="src/app/forms/Customize.php.sourcemap"/>
+    <file inRootDir="1" src="src/app/forms/Main.behaviour"/>
+    <file inRootDir="1" src="src/app/forms/Main.php.axml"/>
+    <file inRootDir="1" src="src/app/forms/Main.php.source"/>
+    <file inRootDir="1" src="src/app/forms/Main.php.sourcemap"/>
+    <file inRootDir="1" src="src/app/forms/Manager.behaviour"/>
+    <file inRootDir="1" src="src/app/forms/Manager.php.axml"/>
+    <file inRootDir="1" src="src/app/forms/Manager.php.source"/>
+    <file inRootDir="1" src="src/app/forms/Manager.php.sourcemap"/>
+    <file inRootDir="1" src="src/app/forms/Welcome.behaviour"/>
+    <file inRootDir="1" src="src/app/forms/Welcome.php.axml"/>
+    <file inRootDir="1" src="src/app/forms/Welcome.php.source"/>
+    <file inRootDir="1" src="src/app/forms/Welcome.php.sourcemap"/>
+    <file inRootDir="1" src="src/app/modules"/>
+    <file inRootDir="1" src="src/app/modules/Module.behaviour"/>
+    <file inRootDir="1" src="src/app/modules/Module.json"/>
+    <file inRootDir="1" src="src/app/modules/Module.php.axml"/>
+    <file inRootDir="1" src="src/app/modules/Module.php.source"/>
+    <file inRootDir="1" src="src/app/modules/Module.php.sourcemap"/>
+    <file inRootDir="1" src="src/JPHP-INF"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/FotpixDownloader/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/.data/img/fotpixlogo.png"/>
+    <file inRootDir="1" src="src/.data/img/fotpixbg.png"/>
+    <file inRootDir="1" src="src_generated/app/forms/Customize.php"/>
+    <file inRootDir="1" src="src_generated/app/forms/Main.php"/>
+    <file inRootDir="1" src="src_generated/app/forms/Manager.php"/>
+    <file inRootDir="1" src="src_generated/app/forms/Welcome.php"/>
+    <file inRootDir="1" src="src_generated/app/modules/AppModule.php"/>
+    <file inRootDir="1" src="src_generated/app/modules/Module.php"/>
+    <file inRootDir="1" src="app/forms/Main.php (1)"/>
+    <file inRootDir="1" src="src_generated/app/forms/KVReader.php"/>
+    <file inRootDir="1" src="src_generated/app/forms/ahudm.php"/>
+    <file inRootDir="1" src="src/ahudm"/>
+    <file inRootDir="1" src="src/ahudm/KVReader.php"/>
+    <file inRootDir="1" src="src/app/forms/ahudm.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.sql.SqlBundle"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.sql.SqlBundle/bundle/sql/SqlClient.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.sql.SqlBundle/bundle/sql/SqlStorage.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.sql.MysqlBundle"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.sql.MysqlBundle/bundle/sql/MysqlClient.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.systemtray.SystemTrayBundle"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.systemtray.SystemTrayBundle/script/SystemTrayScript.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.httpclient.HttpClientBundle"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.httpclient.HttpClientBundle/bundle/http/HttpResponse.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.httpclient.HttpClientBundle/bundle/http/HttpAsyncResponse.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.httpclient.HttpClientBundle/bundle/http/HttpClient.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.httpclient.HttpClientBundle/bundle/http/HttpDownloader.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.httpclient.HttpClientBundle/bundle/http/HttpChecker.php"/>
+    <file inRootDir="1" src="src/.scripts/Module/systemTray.json"/>
+    <file inRootDir="1" src="src/.data/img/35e7e896-1af0-41d6-acb8-ba80c1a03a87-1474117237248.png"/>
+    <file inRootDir="1" src="src/.scripts/Checker">
+      <links>
+        <link src="src/app/modules/Checker.php"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/modules/Checker.php"/>
+    <file inRootDir="1" src="src/.data/img/dc81a703-5880-46f1-8fe4-649b8f4d61ea-1474117091844.png"/>
+    <file inRootDir="1" src="src_generated/app/modules/Checker.php"/>
+    <file inRootDir="1" src="src/.scripts/Checker/githubchecker.json"/>
+    <file inRootDir="1" src="src/.scripts/Checker/hudstfchecker.json"/>
+    <file inRootDir="1" src="src/.scripts/Checker/sitechecker.json"/>
+    <file inRootDir="1" src="src/.scripts/Checker/systemtray.json"/>
+    <file inRootDir="1" src="src/app/modules/Checker.behaviour"/>
+    <file inRootDir="1" src="src/app/modules/Checker.json"/>
+    <file inRootDir="1" src="src/app/modules/Checker.php.axml"/>
+    <file inRootDir="1" src="D:/Old Files/DevelNext/DevelNext/GitHub API/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/ValveKeyValues/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/C:/Users/Disquse/Desktop/previewtemplate.png"/>
+    <file inRootDir="1" src="src/.data/img/previewtemplate.png"/>
+    <file inRootDir="1" src="src/.scripts/Checker/internetchecker.json"/>
+    <file inRootDir="1" src="src/.scripts/Checker/serverchecker.json"/>
+    <file inRootDir="1" src="src/.scripts/Checker/timerchecker.json"/>
+    <file inRootDir="1" src="src/.data/img/8337e4cd-9493-401f-b54a-c676a63c6f18-1474117261217.png"/>
+    <file inRootDir="1" src="src/.scripts/Module/vdfdecode.json"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/XML parser/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/bundle/windows/Windows.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/bundle/windows/WindowsException.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/bundle/windows/WindowsScriptHost.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/bundle/windows/reg/regResult.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/bundle/windows/util/AbstractUtil.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/bundle/windows/util/ExeUtil.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/bundle/windows/util/LibUtil.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/bridge.bat"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/getDriveSerial.vbs"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/getInstallTimestamp.js"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/getProductKey.bat"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/getTasklist.bat"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/getUUID.vbs"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/netScan.bat"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/regRead.bat"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/regSrv.bat"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/taskExists.bat"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/scripts/wmicQuery.bat"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/utils/exe/nircmd-x64.exe"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.windows.WindowsBundle/.data/windows/utils/exe/nircmd-x86.exe"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.backup.backupBundle"/>
+    <file inRootDir="1" src=".dn"/>
+    <file inRootDir="1" src=".dn/bundles/develnext.bundle.backup.backupBundle.conf"/>
+    <file inRootDir="1" src=".dn/bundles/develnext.bundle.game2d.Game2DBundle.conf"/>
+    <file inRootDir="1" src=".dn/bundles/develnext.bundle.httpclient.HttpClientBundle.conf"/>
+    <file inRootDir="1" src=".dn/bundles/develnext.bundle.jsoup.JsoupBundle.conf"/>
+    <file inRootDir="1" src=".dn/bundles/develnext.bundle.sql.MysqlBundle.conf"/>
+    <file inRootDir="1" src=".dn/bundles/develnext.bundle.systemtray.SystemTrayBundle.conf"/>
+    <file inRootDir="1" src=".dn/bundles/develnext.bundle.windows.WindowsBundle.conf"/>
+    <file inRootDir="1" src=".dn/bundles/ide.bundle.std.JPHPDesktopDebugBundle.conf"/>
+    <file inRootDir="1" src=".dn/bundles/ide.bundle.std.UIDesktopBundle.conf"/>
+    <file inRootDir="1" src=".dn/cache/.theme/style-ide.css"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/.cacheignore"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/action/Animation.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/BlinkAnimationBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/BloomEffectBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/DraggingFormBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/DropShadowEffectBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/EscapeShutdownBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/GameSceneBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/GaussianBlurEffectBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/InnerShadowEffectBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/ReflectionEffectBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/VibrationAnimationBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/http/HttpAsyncResponse.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/http/HttpChecker.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/http/HttpClient.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/http/HttpResponse.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/facade/Json.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/Files.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/game/UXGameBackgroundWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/game/UXGamePaneWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/AbstractFormWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/AbstractForm.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/AbstractModule.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/AbstractScript.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/ApplicationTrait.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/custom/AbstractBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/custom/AnimationBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/custom/BehaviourLoader.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/custom/BehaviourManager.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/custom/EffectBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/custom/FormBehaviourManager.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/custom/ModuleBehaviourManager.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/TextableBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/ValuableBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/DataUtils.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/event/AbstractEventAdapter.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/event/ClickEventAdapter.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/event/MousedownEventAdapter.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/EventBinder.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/ScriptManager.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXButtonWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXFlatButtonWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXImageAreaWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXLabeledWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXLabelExWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXLabelWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXNodeWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXWebViewWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/DirectoryChooserScript.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/MacroScript.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/storage/AbstractStorage.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/storage/IniStorage.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/support/ScriptHelpers.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/SystemTrayScript.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/TimerScript.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/timer/AccurateTimer.phb"/>
+    <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/Customize.fxml.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/Main.fxml.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/MainForm.fxml.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/Manager.fxml.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/Welcome.fxml.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/ScriptModuleEditor/src/.scripts/AppModule.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/ScriptModuleEditor/src/.scripts/Checker.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/ScriptModuleEditor/src/.scripts/MainModule.conf"/>
+    <file inRootDir="1" src=".dn/ide/editors/ScriptModuleEditor/src/.scripts/Module.conf"/>
+    <file inRootDir="1" src=".dn/ide/project/behaviours/BundleProjectBehaviour.conf"/>
+    <file inRootDir="1" src=".dn/ide/project/behaviours/PhpProjectBehaviour.conf"/>
+    <file inRootDir="1" src=".dn/ide.build.WindowsApplicationBuildType.json"/>
+    <file inRootDir="1" src=".dn/ide.lock"/>
+    <file inRootDir="1" src=".dn/index.json"/>
+    <file inRootDir="1" src=".dn/project.ws"/>
+    <file inRootDir="1" src="Object"/>
+    <file inRootDir="1" src=".dn/cache"/>
+    <file inRootDir="1" src=".dn/cache/.theme"/>
+    <file inRootDir="1" src=".dn/cache/bytecode"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/action"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/http"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/facade"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/game"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/behaviour/custom"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/event"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/storage"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/support"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/timer"/>
+    <file inRootDir="1" src="build.xml"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/Preloader.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXCheckboxWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXListViewWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXTableViewWrapper.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/UXTabPaneWrapper.phb"/>
+    <file inRootDir="1" src=".dn/library.conf"/>
+    <file inRootDir="1" src="src/.data/html/base.html"/>
+    <file inRootDir="1" src="src/.data/html"/>
+    <file inRootDir="1" src="src/.data/html/script.js"/>
+    <file inRootDir="1" src="src/.data/html/vdfparser.js"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/San Andreas Manager/src/.forms/Main.fxml"/>
+    <file inRootDir="1" src="src/app/modules/VDF.php"/>
+    <file inRootDir="1" src="C:/Users/Disquse/Desktop/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src_generated/app/modules/VDF.php"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/script/support/NodeHelper.phb"/>
+    <file inRootDir="1" src="src/.data/presets/killfeedpresets.json"/>
+    <file inRootDir="1" src="src/.data/presets"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/SQLiteDatabase/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/.data/img/91856a64-3118-439a-abf2-dbd11b40c7cf-1443098717234.png"/>
+    <file inRootDir="1" src="src/.data/img/ec9335b4-fa81-4809-bf01-fc941c8c80ef-1443098711901.png"/>
+    <file inRootDir="1" src="src/.data/img/48f0d218-c050-49d3-88b9-3e2cfc9957e3-1451774384141.png"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.sql.SqliteBundle"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.sql.SqliteBundle/bundle/sql/SqliteStorage.php"/>
+    <file inRootDir="1" src="vendor/develnext.bundle.sql.SqliteBundle/bundle/sql/SqliteClient.php"/>
+    <file inRootDir="1" src=".dn/bundles/develnext.bundle.sql.SqliteBundle.conf"/>
+    <file inRootDir="1" src="src/.scripts/Module/settings.json"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/sql/SqlClient.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/sql/SqliteClient.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/sql/SqliteStorage.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/sql/SqlStorage.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/bundle/sql"/>
+    <file inRootDir="1" src="src/.scripts/Module/profiles.json"/>
+    <file inRootDir="1" src="src/.forms/Settings.fxml">
+      <links>
+        <link src="src/app/forms/Settings.php"/>
+        <link src="src/.forms/Settings.conf"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/forms/Settings.php"/>
+    <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/Settings.fxml.conf"/>
+    <file inRootDir="1" src="src/.forms/Settings.conf"/>
+    <file inRootDir="1" src="src/app/forms/Settings.behaviour"/>
+    <file inRootDir="1" src="src/app/forms/Settings.php.axml"/>
+    <file inRootDir="1" src="src_generated/app/forms/Settings.php"/>
+    <file inRootDir="1" src="src/.data/img/snow.png"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/ChatterAnimationBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/behaviour/custom/RandomMovementAnimationBehaviour.phb"/>
+    <file inRootDir="1" src=".dn/cache/bytecode/php/gui/framework/View.phb"/>
+    <file inRootDir="1" src="src/.scripts/Module/storage.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/hudstorage.json"/>
+    <file inRootDir="1" src="src/.scripts/Module/profilestorage.json"/>
+    <file inRootDir="1" src="src/.data/img/66DkFpmxyFY.jpg"/>
+    <file inRootDir="1" src="src/.data/img/Uncharted™-4_-A-Thief’s-End_20160429183617-760x428.jpg"/>
+    <file inRootDir="1" src="src/.data/img/Uncharted-4-Infernal-Place-4.jpg"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/TF2HUDEditor/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/.data/html/killfeed.html"/>
+    <file inRootDir="1" src="src/.data/img/killfeedbackground.jpg"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/Browser/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/TabsCopyBug/src/.forms/MainForm.fxml"/>
+    <file inRootDir="1" src="src/.forms/Setting.fxml">
+      <links>
+        <link src="src/app/forms/Setting.php"/>
+        <link src="src/.forms/Setting.conf"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/forms/Setting.php"/>
+    <file inRootDir="1" src="src/.forms/Setting.conf"/>
+    <file inRootDir="1" src="app/forms/Settings.php (1)"/>
+    <file inRootDir="1" src="src/.forms/test.fxml">
+      <links>
+        <link src="src/app/forms/test.php"/>
+        <link src="src/.forms/test.conf"/>
+      </links>
+    </file>
+    <file inRootDir="1" src="src/app/forms/test.php"/>
+    <file inRootDir="1" src="src/.forms/test.conf"/>
+    <file inRootDir="1" src="lib"/>
+    <file inRootDir="1" src="src"/>
+    <file inRootDir="1" src="src/app/forms/Setting.behaviour"/>
+    <file inRootDir="1" src="src/app/forms/Setting.php.axml"/>
+    <file inRootDir="1" src="src/app/forms/test.behaviour"/>
+    <file inRootDir="1" src="src/app/forms/test.php.axml"/>
+    <file inRootDir="1" src="build"/>
+    <file inRootDir="1" src="~project"/>
+    <file inRootDir="1" src="src_generated"/>
+    <file inRootDir="1" src="app/forms/Main.php (1)"/>
+  </files>
+  <behaviours>
+  <behaviour class="ide\project\behaviours\BundleProjectBehaviour"/>
+    <behaviour class="ide\project\behaviours\PhpProjectBehaviour"/>
+    <behaviour class="ide\project\behaviours\JavaPlatformBehaviour"/>
+    <behaviour class="ide\project\behaviours\GuiFrameworkProjectBehaviour"/>
+    <behaviour class="ide\project\behaviours\GradleProjectBehaviour"/>
+    <behaviour class="ide\project\behaviours\RunBuildProjectBehaviour"/>
+    <behaviour class="ide\project\behaviours\ShareProjectBehaviour"/>
+  </behaviours>
+</project>

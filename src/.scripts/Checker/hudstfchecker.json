@@ -1,0 +1,1 @@
+{"id":"hudstfchecker","ideType":"develnext\\bundle\\httpclient\\components\\HttpCheckerComponent","type":"bundle\\http\\HttpChecker","x":32,"y":208,"properties":{"url":"http://huds.tf","checkInterval":"10000","autoStart":true}}

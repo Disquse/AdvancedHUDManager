@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<behaviours>
+  <target id="KillfeedUpdateButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedApplyButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedCornerRadiusAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedLineSpacingAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedMaxDeathNoticesAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedLineHeightAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedIconScaleAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedXPositionAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedYPositionAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedLayoutWidthAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedLayoutHeightAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedRightAlignAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedVisibilityAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedBluColorAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedIconColorAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedPanelBackgroundAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedPanelLocalPlayerAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedLocalBackgroundAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedPresetsButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorMinWidthAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorMaxWidthAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorStartRadiusAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorEndRadiusAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorMaxHeightAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorMinTimeAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorMaxTimeAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorVisibilityAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedNotFoundedAddButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedPresetsBackButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedPresetsUsePresetButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="KillfeedPresetsUpdateListButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="OverridesPreview">
+    <behaviour color="#b3b3b3" offsetX="0" offsetY="0" radius="6.0975609756098" spread="0.60975609756098" type="behaviour\custom\DropShadowEffectBehaviour" when="HOVER"/>
+  </target>
+  <target id="OverridesToggleButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="OverridesUpdateButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="button">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="button6">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="button7">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorUpdateButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorApplyButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorPresetsButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorNotFoundedAddButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DamageIndicatorMinHeightAdd">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="ColorsUpdateListButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+</behaviours>

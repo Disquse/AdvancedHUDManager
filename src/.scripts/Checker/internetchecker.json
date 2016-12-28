@@ -1,0 +1,1 @@
+{"id":"internetchecker","ideType":"develnext\\bundle\\httpclient\\components\\HttpCheckerComponent","type":"bundle\\http\\HttpChecker","x":32,"y":16,"properties":{"url":"http://google.com","checkInterval":10000}}

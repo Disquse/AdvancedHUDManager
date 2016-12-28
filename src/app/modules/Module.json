@@ -1,0 +1,1 @@
+{"properties":{"version":"1","author":"disquse","description":"Advanced HUD Manager Main Module","singleton":false},"scripts":["profilestorage.json","backupdirchooser.json","huddirchooser.json","profiles.json","tfdirchooser.json","settings.json","profilesrefresh.json"]}

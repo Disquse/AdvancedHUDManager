@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.web.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399" prefWidth="879" styleClass="">
+  <children>
+    <Rectangle arcHeight="0" arcWidth="0" fill="#131313" focusTraversable="false" height="48" id="HeaderPanel" layoutX="0" layoutY="0" stroke="#ffffff00" strokeType="INSIDE" strokeWidth="2" styleClass="" width="878"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="HeaderWelcomeLabel" layoutX="16" layoutY="0" prefHeight="48" prefWidth="416" styleClass="label " text="WELCOME" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="18"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-HeaderWelcomeLabel" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-HeaderPanel" visible="1"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="WelcomeNewsLabel" layoutX="456" layoutY="0" prefHeight="48" prefWidth="192" styleClass="label " text="NEWS:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="18"/>
+      </font>
+    </LabelEx>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeNewsOpen" layoutX="448" layoutY="352" prefHeight="32" prefWidth="416" styleClass="x-flat-button " text="Open" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="WelcomeSelectProfileLabel" layoutX="16" layoutY="56" prefHeight="24" prefWidth="304" styleClass="label " text="Select profile:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="16"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeSelectProfileLabel" visible="1"/>
+    <ComboBox editable="false" focusTraversable="true" id="WelcomeProfileList" layoutX="16" layoutY="88" prefHeight="25" prefWidth="312" promptText="" styleClass="combo-box-base combo-box " value="" visibleRowCount="10">
+      <items xmlns:fx="http://javafx.com/fxml">
+        <FXCollections fx:factory="observableArrayList"/>
+      </items>
+    </ComboBox>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeProfileList" tooltipText="" visible="1"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="WelcomeCreateProfileLabel" layoutX="16" layoutY="136" prefHeight="24" prefWidth="416" styleClass="label " text="Or make a new one:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="16"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfileLabel" visible="1"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="WelcomeSelectModeLabel" layoutX="24" layoutY="312" prefHeight="24" prefWidth="416" styleClass="label " text="And select work mode:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="16"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeSelectModeLabel" visible="1"/>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeNormalModeButton" layoutX="16" layoutY="352" prefHeight="32" prefWidth="208" styleClass="x-flat-button " text="Normal" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeNormalModeButton" visible="1"/>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeSilentModeButton" layoutX="224" layoutY="352" prefHeight="32" prefWidth="208" styleClass="x-flat-button " text="Silent" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <Data cursor="DEFAULT" enabled="" id="data-WelcomeSilentModeButton" visible="1"/>
+    <Panel backgroundColor="#1a1a1a" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="WelcomeCreateProfilePanel" layoutX="16" layoutY="416" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="136" prefWidth="416" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children>
+        <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="WelcomeCreateProfileHUDDir" layoutX="8" layoutY="48" prefColumnCount="12" prefHeight="37" prefWidth="360" promptText="Path to HUD directory..." styleClass="text-input text-field " text="">
+          <font>
+            <Font name="System Regular" size="16"/>
+          </font>
+        </TextField>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfileHUDDir" visible="1"/>
+        <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="WelcomeCreateProfileName" layoutX="8" layoutY="8" prefColumnCount="12" prefHeight="37" prefWidth="400" promptText="Write profile name..." styleClass="text-input text-field " text="">
+          <font>
+            <Font name="System Regular" size="16"/>
+          </font>
+        </TextField>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfileName" tooltipText="Blocked symbols: / \ : * ? &quot; &lt; &gt; | + . % ! @" visible="1"/>
+        <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeCreateProfilePanelCreateButton" layoutX="8" layoutY="96" prefHeight="32" prefWidth="360" styleClass="x-flat-button " text="Create" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+          <font>
+            <Font name="Verdana" size="16"/>
+          </font>
+        </FlatButton>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfilePanelCreateButton" visible="1"/>
+        <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeCreateProfilePanelClose" layoutX="376" layoutY="96" prefHeight="32" prefWidth="32" styleClass="x-flat-button " text="X" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+          <font>
+            <Font name="Verdana" size="16"/>
+          </font>
+        </FlatButton>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfilePanelClose" tooltipText="Close 'Create profile' panel" visible="1"/>
+        <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeCreateProfileBrowseButton" layoutX="376" layoutY="51" prefHeight="32" prefWidth="32" styleClass="x-flat-button " text="..." textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+          <font>
+            <Font name="Verdana" size="16"/>
+          </font>
+        </FlatButton>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfileBrowseButton" tooltipText="Browse button" visible="1"/>
+      </children>
+      <titleFont>
+        <Font name="System Regular" size="12"/>
+      </titleFont>
+    </Panel>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfilePanel" visible="1"/>
+    <Panel backgroundColor="#1a1a1a" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="WelcomeImportProfilePanel" layoutX="448" layoutY="416" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="136" prefWidth="416" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children>
+        <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="WelcomeImportProfilePath" layoutX="8" layoutY="48" prefColumnCount="12" prefHeight="37" prefWidth="400" promptText="Path to profile (path to .ini or url to file)..." styleClass="text-input text-field " text="">
+          <font>
+            <Font name="System Regular" size="16"/>
+          </font>
+        </TextField>
+        <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="WelcomeImportProfileName" layoutX="8" layoutY="8" prefColumnCount="12" prefHeight="37" prefWidth="400" promptText="Rename profile (optional)..." styleClass="text-input text-field " text="">
+          <font>
+            <Font name="System Regular" size="16"/>
+          </font>
+        </TextField>
+        <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeImportProfileCreateButton" layoutX="8" layoutY="96" prefHeight="32" prefWidth="360" styleClass="x-flat-button " text="Create" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+          <font>
+            <Font name="Verdana" size="16"/>
+          </font>
+        </FlatButton>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeImportProfilePath" visible="1"/>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeImportProfileName" visible="1"/>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeImportProfileCreateButton" visible="1"/>
+        <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="ImportProfilePanelClose" layoutX="376" layoutY="96" prefHeight="32" prefWidth="32" styleClass="x-flat-button " text="X" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+          <font>
+            <Font name="Verdana" size="16"/>
+          </font>
+        </FlatButton>
+        <Data cursor="DEFAULT" enabled="1" id="data-ImportProfilePanelClose" tooltipText="Close 'Import profile' panel" visible="1"/>
+      </children>
+      <titleFont>
+        <Font name="System Regular" size="12"/>
+      </titleFont>
+    </Panel>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeImportProfilePanel" visible="1"/>
+    <Panel backgroundColor="#1a1a1a" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="WelcomeCreateProfileMethodsPanel" layoutX="16" layoutY="168" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="32" prefWidth="416" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+      <children>
+        <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeCreateProfileButton" layoutX="0" layoutY="0" prefHeight="32" prefWidth="208" styleClass="x-flat-button " text="Create" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+          <font>
+            <Font name="Verdana" size="16"/>
+          </font>
+        </FlatButton>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfileButton" tooltipText="Create new profile" visible="1"/>
+        <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeImportProfileButton" layoutX="208" layoutY="0" prefHeight="32" prefWidth="208" styleClass="x-flat-button " text="Import" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+          <font>
+            <Font name="Verdana" size="16"/>
+          </font>
+        </FlatButton>
+        <Data cursor="DEFAULT" enabled="1" id="data-WelcomeImportProfileButton" tooltipText="Import profile" visible="1"/>
+      </children>
+      <titleFont>
+        <Font name="System Regular" size="12"/>
+      </titleFont>
+    </Panel>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeCreateProfileMethodsPanel" visible="1"/>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="WelcomeProfileRefreshButton" layoutX="336" layoutY="85" prefHeight="32" prefWidth="96" styleClass="x-flat-button " text="Update" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <Data cursor="DEFAULT" id="data-WelcomeProfileRefreshButton"/>
+    <Data cursor="DEFAULT" id="data-WelcomeNewsLabel"/>
+    <Data cursor="DEFAULT" id="data-WelcomeNewsOpen"/>
+    <WebView focusTraversable="true" id="WelcomeNewsBrowser" layoutX="448" layoutY="60" prefHeight="290" prefWidth="416"/>
+    <Data contextMenuEnabled="" cursor="DEFAULT" enabled="1" id="data-WelcomeNewsBrowser" url="" visible="1"/>
+    <ProgressIndicator focusTraversable="false" id="WelcomeNewsProgress" layoutX="839" layoutY="8" prefHeight="32" prefWidth="32" progress="-1" styleClass="progress-indicator "/>
+    <Data cursor="DEFAULT" enabled="1" id="data-WelcomeNewsProgress" visible="1"/>
+  </children>
+</AnchorPane>

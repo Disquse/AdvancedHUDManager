@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.web.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="879" styleClass="">
+  <children>
+    <Rectangle arcHeight="0" arcWidth="0" fill="#131313" focusTraversable="false" height="48" id="rectAlt" layoutX="0" layoutY="0" stroke="#ffffff00" strokeType="INSIDE" strokeWidth="2" styleClass="" width="880"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsLabel" layoutX="16" layoutY="0" prefHeight="48" prefWidth="520" styleClass="label " text="SETTINGS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="18"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-rectAlt" visible="1"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsProfilesLabel" layoutX="16" layoutY="56" prefHeight="24" prefWidth="304" styleClass="label " text="Profiles:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="16"/>
+      </font>
+    </LabelEx>
+    <ComboBox editable="false" focusTraversable="true" id="SettingsProfileList" layoutX="16" layoutY="88" prefHeight="25" prefWidth="312" promptText="" styleClass="combo-box-base combo-box " value="" visibleRowCount="10">
+      <items xmlns:fx="http://javafx.com/fxml">
+        <FXCollections fx:factory="observableArrayList"/>
+      </items>
+    </ComboBox>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="button" layoutX="376" layoutY="184" prefHeight="32" prefWidth="224" styleClass="x-flat-button " text="Apply" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <Data cursor="DEFAULT" enabled="1" id="data-button" tooltipText="Create new profile" visible="1"/>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="SettingsProfilesEdit" layoutX="16" layoutY="168" prefHeight="32" prefWidth="152" styleClass="x-flat-button " text="Edit" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="SettingsProfilesRemove" layoutX="176" layoutY="168" prefHeight="32" prefWidth="152" styleClass="x-flat-button " text="Remove" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsProfilesTF2DirectoryLabel" layoutX="16" layoutY="280" prefHeight="24" prefWidth="304" styleClass="label " text="TF2 Directory:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="16"/>
+      </font>
+    </LabelEx>
+    <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="SettingsProfilesTF2Directory" layoutX="16" layoutY="312" prefColumnCount="12" prefHeight="32" prefWidth="272" promptText="" styleClass="text-input text-field " text="">
+      <font>
+        <Font name="System Regular" size="12"/>
+      </font>
+    </TextField>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="SettingsProfilesTF2DirectoryBrowse" layoutX="296" layoutY="312" prefHeight="32" prefWidth="32" styleClass="x-flat-button " text="..." textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="SettingsProfilesTF2DirectorySave" layoutX="16" layoutY="352" prefHeight="32" prefWidth="312" styleClass="x-flat-button " text="Save" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="label3" layoutX="376" layoutY="56" prefHeight="24" prefWidth="472" styleClass="label " text="Settings:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="16"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-label3" visible="1"/>
+    <Slider blockIncrement="0" focusTraversable="true" id="slider" layoutX="376" layoutY="137" majorTickUnit="25" max="60" min="10" orientation="HORIZONTAL" prefHeight="38" prefWidth="224" showTickLabels="true" showTickMarks="true" snapToTicks="true" styleClass="slider " value="15"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-slider" visible="1"/>
+    <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="label4" layoutX="376" layoutY="88" prefHeight="40" prefWidth="224" styleClass="label " text="Online services status update time (sec.):" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="true">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-label4" visible="1"/>
+    <Separator focusTraversable="false" id="separator" layoutX="344" layoutY="64" opacity="0.097560975609756" orientation="VERTICAL" prefHeight="312" prefWidth="24" styleClass="separator "/>
+    <Data cursor="DEFAULT" enabled="1" id="data-separator" visible="1"/>
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="SettingsProfilesSetDefault" layoutX="16" layoutY="128" prefHeight="32" prefWidth="312" styleClass="x-flat-button " text="Set as default" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="16"/>
+      </font>
+    </FlatButton>
+    <Data id="data-SettingsLabel"/>
+    <Data id="data-SettingsProfilesLabel"/>
+    <Data id="data-SettingsProfilesEdit"/>
+    <Data id="data-SettingsProfilesRemove"/>
+    <Data id="data-SettingsProfilesTF2DirectoryLabel"/>
+    <Data id="data-SettingsProfilesTF2DirectoryBrowse"/>
+    <Data id="data-SettingsProfilesTF2DirectorySave"/>
+    <Data cursor="DEFAULT" id="data-SettingsProfilesSetDefault"/>
+    <Data cursor="DEFAULT" id="data-SettingsProfileList"/>
+  </children>
+</AnchorPane>

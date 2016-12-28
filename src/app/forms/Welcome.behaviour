@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<behaviours>
+  <target id="WelcomeNormalModeButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeSilentModeButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeImportProfileCreateButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeCreateProfilePanelCreateButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeCreateProfileButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeImportProfileButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeCreateProfilePanelClose">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="ImportProfilePanelClose">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeCreateProfileBrowseButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeProfileRefreshButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeNewsOpen">
+    <behaviour threshold="0.45" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="WelcomeNewsBrowser">
+    <behaviour color="black" offsetX="0" offsetY="0" radius="7.5609756097561" type="behaviour\custom\InnerShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+</behaviours>

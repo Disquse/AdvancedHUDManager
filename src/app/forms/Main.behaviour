@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<behaviours>
+  <target id="Forms">
+    <behaviour autoplay="1" cacheScenes="1" gravityDirection="DOWN" gravityType="ZERO" initialScene="Welcome" type="behaviour\custom\GameSceneBehaviour"/>
+    <behaviour color="#000000" offsetX="0" offsetY="0" radius="10" spread="0" type="behaviour\custom\DropShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+  <target id="MenuPanel">
+    <behaviour color="black" offsetX="0" offsetY="0" radius="13.529411764706" spread="0" type="behaviour\custom\DropShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+  <target id="AHUDMLogo">
+    <behaviour animated="1" opacity="0.62424242424242" opacityEnabled="1" type="behaviour\custom\DraggingFormBehaviour"/>
+    <behaviour type="behaviour\custom\EscapeShutdownBehaviour"/>
+  </target>
+  <target id="MenuWelcomeButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="MenuManagerButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="MenuCustomizeButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="MenuOtherButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="MenuSettingsButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="Bugfix">
+    <behaviour threshold="0.18085106382979" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+    <behaviour color="black" offsetX="0" offsetY="0" radius="18.510638297872" spread="0.58510638297872" type="behaviour\custom\DropShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+  <target id="HeaderCloseButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="HeaderHideButton">
+    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="HeaderButtonPanel">
+    <behaviour color="black" offsetX="0" offsetY="0" radius="10" spread="0" type="behaviour\custom\DropShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+  <target id="CloseYesButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="CloseNoButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="ClosePanel">
+    <behaviour color="black" offsetX="0" offsetY="0" radius="10.786516853933" spread="0.23595505617978" type="behaviour\custom\DropShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+  <target id="CloseCaptionLabel">
+    <behaviour animated="1" opacity="0.6" opacityEnabled="" type="behaviour\custom\DraggingFormBehaviour"/>
+  </target>
+  <target id="DirPanel">
+    <behaviour color="black" offsetX="0" offsetY="0" radius="10.786516853933" spread="0.23595505617978" type="behaviour\custom\DropShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+  <target id="DirCaptionLabel">
+    <behaviour animated="1" opacity="0.6" opacityEnabled="" type="behaviour\custom\DraggingFormBehaviour"/>
+  </target>
+  <target id="DirBrowseButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DirApplyButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DirExitButton">
+    <behaviour threshold="0.17021276595745" type="behaviour\custom\BloomEffectBehaviour" when="HOVER"/>
+    <behaviour radius="5.3085106382979" type="behaviour\custom\GaussianBlurEffectBehaviour" when="CLICK"/>
+  </target>
+  <target id="DirPath">
+    <behaviour delay="0" duration="0" enabled="" offsetX="10" offsetY="0" repeatCount="-1" type="behaviour\custom\VibrationAnimationBehaviour" when="ALWAYS"/>
+    <behaviour color="black" offsetX="0" offsetY="0" radius="2" type="behaviour\custom\InnerShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+  <target id="HeaderWarningButton">
+    <behaviour threshold="0.45" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
+    <behaviour color="#000000" offsetX="0" offsetY="0" radius="10" spread="0" type="behaviour\custom\DropShadowEffectBehaviour" when="ALWAYS"/>
+    <behaviour animated="1" delay="0" duration="1200" maxOpacity="1" minOpacity="0.59756097560976" repeatCount="-1" type="behaviour\custom\BlinkAnimationBehaviour" when="ALWAYS"/>
+  </target>
+</behaviours>

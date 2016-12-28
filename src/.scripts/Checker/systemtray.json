@@ -1,0 +1,1 @@
+{"id":"systemtray","ideType":"develnext\\bundle\\systemtray\\components\\SystemTrayComponent","type":"script\\SystemTrayScript","x":128,"y":16,"properties":{"visible":"1","tooltip":"Advanced HUD Manager","icon":".data/img/8337e4cd-9493-401f-b54a-c676a63c6f18-1474117261217.png","alwaysShowing":false}}

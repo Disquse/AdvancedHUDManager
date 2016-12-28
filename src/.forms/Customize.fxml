@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.web.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="879" styleClass="">
+  <children>
+    <Rectangle arcHeight="0" arcWidth="0" fill="#131313" focusTraversable="false" height="48" id="rectAlt" layoutX="0" layoutY="0" stroke="#ffffff00" strokeType="INSIDE" strokeWidth="2" styleClass="" width="880"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="CustomizeLabel" layoutX="16" layoutY="0" prefHeight="48" prefWidth="128" styleClass="label " text="CUSTOMIZE" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="18"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" enabled="1" id="data-rectAlt" visible="1"/>
+    <TabPaneEx AnchorPane.topAnchor="48" focusTraversable="true" id="CustomizeTabs" layoutX="0" layoutY="48" prefHeight="688" prefWidth="879" styleClass="tab-pane " tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Overrides">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="OverridesListPanel" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="322" prefWidth="278" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="OverridesListLabel" layoutX="12" layoutY="8" prefHeight="24" prefWidth="192" styleClass="label " text="OVERRIDES" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <ListViewEx editable="false" fixedCellSize="-1" focusTraversable="true" id="OverridesList" layoutX="11" layoutY="40" prefHeight="256" prefWidth="256" styleClass="list-view ">
+                      <items xmlns:fx="http://javafx.com/fxml">
+                        <FXCollections fx:factory="observableArrayList"/>
+                      </items>
+                    </ListViewEx>
+                    <Data id="data-OverridesListLabel"/>
+                    <Data cursor="DEFAULT" id="data-OverridesList"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="OverridesPreviewPanel" layoutX="599" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="320" prefWidth="278" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="OverridesPreviewLabel" layoutX="16" layoutY="8" prefHeight="24" prefWidth="192" styleClass="label " text="PREVIEW" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <ImageViewEx autoSize="false" centered="false" focusTraversable="false" height="256" id="OverridesPreview" layoutX="14" layoutY="40" mosaic="false" mosaicGap="0" proportional="false" stretch="true" styleClass="" textFill="#000000" width="256">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </ImageViewEx>
+                    <Data id="data-OverridesPreviewLabel"/>
+                    <Data cursor="DEFAULT" id="data-OverridesPreview"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="OverridesToggleButton" layoutX="298" layoutY="240" prefHeight="32" prefWidth="280" styleClass="x-flat-button " text="Toggle" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="OverridesUpdateButton" layoutX="298" layoutY="280" prefHeight="32" prefWidth="280" styleClass="x-flat-button " text="Update" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" id="data-OverridesPreviewPanel"/>
+                <Data cursor="DEFAULT" id="data-OverridesToggleButton"/>
+                <Data cursor="DEFAULT" id="data-OverridesUpdateButton"/>
+                <Data cursor="DEFAULT" id="data-OverridesAboutPanel"/>
+                <Data cursor="DEFAULT" id="data-OverridesListPanel"/>
+                <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="OverridesNotFoundedTitle" layoutX="280" layoutY="72" prefHeight="48" prefWidth="312" styleClass="label " text="CUSTOM OVERRIDES NOT FOUNDED FOR THIS HUD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="true">
+                  <font>
+                    <Font name="Verdana Bold" size="18"/>
+                  </font>
+                </LabelEx>
+                <Data cursor="DEFAULT" id="data-OverridesNotFoundedTitle" visible="1"/>
+                <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="0" id="OverridesNotFoundedDescription" layoutX="296" layoutY="120" prefHeight="64" prefWidth="280" styleClass="label " text="Make sure you don't change original ahudm.ini file or don't remove any folder in HUD." textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="true">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </LabelEx>
+                <Data cursor="DEFAULT" enabled="" id="data-OverridesNotFoundedDescription" visible="1"/>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="OverridesAboutPanel" layoutX="298" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="232" prefWidth="280" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="OverridesAboutLable" layoutX="16" layoutY="8" prefHeight="24" prefWidth="248" styleClass="label " text="ABOUT" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="TOP_LEFT" autoSize="false" autoSizeType="VERTICAL" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="OverridesAboutText" layoutX="16" layoutY="40" prefHeight="184" prefWidth="248" styleClass="label " text="..." textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="true">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </LabelEx>
+                    <Data cursor="DEFAULT" enabled="1" id="data-OverridesAboutText" tooltipText="" visible="1"/>
+                    <Data cursor="DEFAULT" id="data-OverridesAboutLable"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Crosses">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children/>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Colors">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children>
+                <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="label" layoutX="8" layoutY="-21.000015258789" prefHeight="24" prefWidth="112" styleClass="label " text="SETTINGS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana Bold" size="16"/>
+                  </font>
+                </LabelEx>
+                <Data cursor="DEFAULT" id="data-label"/>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="ColorsElementsPanel" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="272" prefWidth="256" styleClass="" titleColor="#131313" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="labelAlt" layoutX="12" layoutY="8" prefHeight="24" prefWidth="232" styleClass="label " text="SELECT ELEMENT" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <Data cursor="DEFAULT" id="data-labelAlt"/>
+                    <ListViewEx editable="false" fixedCellSize="-1" focusTraversable="true" id="ColorsElementsList" layoutX="16" layoutY="40" prefHeight="216" prefWidth="224" styleClass="list-view ">
+                      <items xmlns:fx="http://javafx.com/fxml">
+                        <FXCollections fx:factory="observableArrayList"/>
+                      </items>
+                    </ListViewEx>
+                    <Data cursor="DEFAULT" enabled="1" id="data-listViewAlt" visible="1"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <Data cursor="DEFAULT" enabled="1" id="data-panel" visible="1"/>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="ColorsUpdateListButton" layoutX="8" layoutY="280" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Update list" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" enabled="1" id="data-button5" visible="1"/>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Fonts">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children/>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Crosshairs">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children/>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Hitmarkers">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children/>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Class Icon">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children/>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Damage Indicator">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children>
+                <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorNotFoundedTitle" layoutX="264" layoutY="40" prefHeight="80" prefWidth="357" styleClass="label " text="DAMAGE INDICATOR PANEL NOT FOUNDED IN HUDLAYOUTS" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="true">
+                  <font>
+                    <Font name="Verdana Bold" size="18"/>
+                  </font>
+                </LabelEx>
+                <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="0" id="DamageIndicatorNotFoundedDescription" layoutX="258" layoutY="120" prefHeight="48" prefWidth="360" styleClass="label " text="You can add damage indicator panel by pressing button below" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="true">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </LabelEx>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorNotFoundedAddButton" layoutX="284" layoutY="176" prefHeight="32" prefWidth="312" styleClass="x-flat-button " text="Add damage indicator" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="DamageIndicatorSettingsPanel" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="320" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorSettingsLabel" layoutX="12" layoutY="8" prefHeight="24" prefWidth="104" styleClass="label " text="SETTINGS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorMaxWidthLabel" layoutX="16" layoutY="56" prefHeight="32" prefWidth="168" styleClass="label " text="Maximum width:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorMinWidthLabel" layoutX="16" layoutY="32" prefHeight="32" prefWidth="168" styleClass="label " text="Minimum width:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorStartRadiusLabel" layoutX="16" layoutY="89" prefHeight="32" prefWidth="168" styleClass="label " text="Start radius:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorEndRadiusLabel" layoutX="16" layoutY="113" prefHeight="32" prefWidth="168" styleClass="label " text="End radius:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorMinHeightLabel" layoutX="16" layoutY="151" prefHeight="32" prefWidth="168" styleClass="label " text="Minimum height:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorMaxHeightLabel" layoutX="16" layoutY="175" prefHeight="32" prefWidth="168" styleClass="label " text="Maximum height:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorMinTimeLabel" layoutX="16" layoutY="211" prefHeight="32" prefWidth="168" styleClass="label " text="Minumum time:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorMaxTimeLabel" layoutX="16" layoutY="237" prefHeight="32" prefWidth="168" styleClass="label " text="Maximum time:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="DamageIndicatorMinWidth" layoutX="200" layoutY="32" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="DamageIndicatorMaxWidth" layoutX="200" layoutY="56" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="DamageIndicatorStartRadius" layoutX="200" layoutY="91" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="DamageIndicatorEndRadius" layoutX="200" layoutY="116" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="DamageIndicatorMinHeight" layoutX="200" layoutY="152" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="DamageIndicatorMaxHeight" layoutX="200" layoutY="177" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="DamageIndicatorMinTime" layoutX="200" layoutY="213" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="DamageIndicatorMaxTime" layoutX="200" layoutY="238" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorVisibilityLabel" layoutX="16" layoutY="280" prefHeight="32" prefWidth="168" styleClass="label " text="Visibility:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinWidthLabel" visible="1"/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorMinWidth"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxWidthLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorStartRadiusLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorEndRadiusLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinHeightLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxHeightLabel" visible="1"/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorMinHeight"/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorMaxHeight"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinTimeLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxTimeLabel" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMinWidthAdd" layoutX="200" layoutY="32" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinWidthAdd"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMaxWidthAdd" layoutX="200" layoutY="57" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorMaxWidth"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorStartRadiusAdd" layoutX="200" layoutY="90" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorStartRadiusAdd"/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorStartRadius"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorEndRadiusAdd" layoutX="200" layoutY="116" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorEndRadiusAdd"/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorEndRadius"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMaxHeightAdd" layoutX="200" layoutY="178" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMinTimeAdd" layoutX="200" layoutY="212" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMaxTimeAdd" layoutX="200" layoutY="238" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorVisibilityAdd" visible=""/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorMinTime"/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorMaxTime"/>
+                    <CheckBox alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="DamageIndicatorVisibility" layoutX="212" layoutY="280" prefHeight="24" prefWidth="32" styleClass="check-box " text="" textAlignment="LEFT" textFill="#333333" underline="false" wrapText="false">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </CheckBox>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorVisibilityAdd" layoutX="200" layoutY="280" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data id="data-DamageIndicatorVisibility"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorVisibilityLabel" visible="1"/>
+                    <Data id="data-DamageIndicatorSettingsLabel"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxWidthAdd"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxHeightAdd"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinTimeAdd"/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorMaxTimeAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMinHeightAdd" layoutX="200" layoutY="152" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinHeightAdd"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="DamageIndicatorPreviewPanel" layoutX="276" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="320" prefWidth="328" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="label13" layoutX="16" layoutY="8" prefHeight="24" prefWidth="224" styleClass="label " text="PREVIEW" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <WebView focusTraversable="true" id="browser" layoutX="16" layoutY="40" prefHeight="264" prefWidth="296"/>
+                    <Data cursor="DEFAULT" id="data-label13"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-browser"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorPresetsButton" layoutX="624" layoutY="200" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Presets" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorUpdateButton" layoutX="624" layoutY="280" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Update" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorApplyButton" layoutX="624" layoutY="240" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Apply" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorSettingsPanel" visible="1"/>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="DamageIndicatorPresetsInformationPanel" layoutX="264" layoutY="336" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="192" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorPresetsInfoLabel" layoutX="12" layoutY="8" prefHeight="24" prefWidth="232" styleClass="label " text="INFORMATION" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="TOP_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorPresetsInfoDescription" layoutX="16" layoutY="35" prefHeight="144" prefWidth="216" styleClass="label " text="Select preset" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="true">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </LabelEx>
+                    <Data id="data-DamageIndicatorPresetsInfoLabel"/>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorPresetsInfoDescription"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="DamageIndicatorPresetsPanel" layoutX="0" layoutY="336" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="320" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="DamageIndicatorPresetsLabel" layoutX="16" layoutY="8" prefHeight="24" prefWidth="224" styleClass="label " text="PRESETS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <ListViewEx editable="false" fixedCellSize="30" focusTraversable="true" id="DamageIndicatorPresetsList" layoutX="16" layoutY="35" prefHeight="266" prefWidth="224" styleClass="list-view ">
+                      <items xmlns:fx="http://javafx.com/fxml">
+                        <FXCollections fx:factory="observableArrayList"/>
+                      </items>
+                    </ListViewEx>
+                    <Data cursor="DEFAULT" id="data-DamageIndicatorPresetsLabel"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="button" layoutX="264" layoutY="536" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Back to settings" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" id="data-button"/>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="button6" layoutX="264" layoutY="576" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Use preset" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" enabled="" id="data-button6"/>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="button7" layoutX="264" layoutY="616" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Update list" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" id="data-button7"/>
+                <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorPresetsButton"/>
+                <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorUpdateButton"/>
+                <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorApplyButton"/>
+                <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorNotFoundedTitle" visible=""/>
+                <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorNotFoundedDescription" visible=""/>
+                <Data cursor="DEFAULT" id="data-DamageIndicatorNotFoundedAddButton"/>
+                <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorPreviewPanel"/>
+                <Data cursor="DEFAULT" id="data-DamageIndicatorPresetsInformationPanel"/>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Chat">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="879" styleClass="">
+              <children/>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Killfeed">
+          <content>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="666" prefWidth="880" styleClass="">
+              <children>
+                <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="0" id="KillfeedNotFoundedDescription" layoutX="304" layoutY="120" prefHeight="48" prefWidth="280" styleClass="label " text="You can add killfeed panel by pressing button below" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="true">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </LabelEx>
+                <LabelEx alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedNotFoundedTitle" layoutX="280" layoutY="72" prefHeight="48" prefWidth="312" styleClass="label " text="KILLFEED PANEL NOT FOUNDED IN HUDLAYOUTS" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="true">
+                  <font>
+                    <Font name="Verdana Bold" size="18"/>
+                  </font>
+                </LabelEx>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedNotFoundedAddButton" layoutX="280" layoutY="192" prefHeight="32" prefWidth="312" styleClass="x-flat-button " text="Add killfeed" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="KillfeedColorsPanel" layoutX="624" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="192" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedColorsLabel" layoutX="12" layoutY="8" prefHeight="24" prefWidth="104" styleClass="label " text="COLORS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedRedColorLabel" layoutX="16" layoutY="56" prefHeight="32" prefWidth="168" styleClass="label " text="RED color:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedBluColorLabel" layoutX="16" layoutY="32" prefHeight="32" prefWidth="168" styleClass="label " text="BLU color:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedIconColorLabel" layoutX="16" layoutY="80" prefHeight="32" prefWidth="168" styleClass="label " text="Icon color:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedPanelBackgroundLabel" layoutX="16" layoutY="104" prefHeight="32" prefWidth="168" styleClass="label " text="Panel background:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedPanelLocalPlayerLabel" layoutX="16" layoutY="128" prefHeight="32" prefWidth="168" styleClass="label " text="Local player:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedLocalBackgroundLabel" layoutX="16" layoutY="152" prefHeight="32" prefWidth="168" styleClass="label " text="Local background:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <ColorPicker editable="true" focusTraversable="true" id="KillfeedRedColor" layoutX="194" layoutY="56" prefHeight="25" prefWidth="48" promptText="" styleClass="combo-box-base color-picker "/>
+                    <ColorPicker editable="true" focusTraversable="true" id="KillfeedIconColor" layoutX="194" layoutY="80" prefHeight="25" prefWidth="48" promptText="" styleClass="combo-box-base color-picker "/>
+                    <ColorPicker editable="true" focusTraversable="true" id="KillfeedPanelBackground" layoutX="194" layoutY="104" prefHeight="25" prefWidth="48" promptText="" styleClass="combo-box-base color-picker "/>
+                    <ColorPicker editable="true" focusTraversable="true" id="KillfeedPanelLocalPlayer" layoutX="194" layoutY="128" prefHeight="25" prefWidth="48" promptText="" styleClass="combo-box-base color-picker "/>
+                    <ColorPicker editable="true" focusTraversable="true" id="KillfeedLocalBackground" layoutX="194" layoutY="152" prefHeight="25" prefWidth="48" promptText="" styleClass="combo-box-base color-picker "/>
+                    <ColorPicker editable="true" focusTraversable="true" id="KillfeedBluColor" layoutX="194" layoutY="32" prefHeight="25" prefWidth="48" promptText="" styleClass="combo-box-base color-picker "/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedBluColorAdd" layoutX="194" layoutY="32" prefHeight="25" prefWidth="48" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedRedColorAdd" layoutX="194" layoutY="56" prefHeight="25" prefWidth="48" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedIconColorAdd" layoutX="194" layoutY="80" prefHeight="25" prefWidth="48" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedPanelBackgroundAdd" layoutX="194" layoutY="104" prefHeight="25" prefWidth="48" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedPanelLocalPlayerAdd" layoutX="194" layoutY="128" prefHeight="25" prefWidth="48" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedLocalBackgroundAdd" layoutX="194" layoutY="152" prefHeight="25" prefWidth="48" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data id="data-KillfeedColorsLabel"/>
+                    <Data id="data-KillfeedRedColorLabel"/>
+                    <Data id="data-KillfeedBluColorLabel"/>
+                    <Data id="data-KillfeedIconColorLabel"/>
+                    <Data id="data-KillfeedPanelBackgroundLabel"/>
+                    <Data id="data-KillfeedPanelLocalPlayerLabel"/>
+                    <Data id="data-KillfeedLocalBackgroundLabel"/>
+                    <Data id="data-KillfeedBluColorAdd"/>
+                    <Data id="data-KillfeedRedColorAdd"/>
+                    <Data id="data-KillfeedIconColorAdd"/>
+                    <Data id="data-KillfeedPanelBackgroundAdd"/>
+                    <Data id="data-KillfeedPanelLocalPlayerAdd"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedLocalBackgroundAdd"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="KillfeedPreviewPanel" layoutX="276" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="320" prefWidth="328" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedPreviewTitle" layoutX="16" layoutY="8" prefHeight="24" prefWidth="224" styleClass="label " text="PREVIEW" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <Data cursor="DEFAULT" id="data-KillfeedPreviewTitle"/>
+                    <WebView focusTraversable="true" id="KillfeedPreview" layoutX="16" layoutY="40" prefHeight="264" prefWidth="296"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedPreview"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="KillfeedSettingsPanel" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="320" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedSettingsLabel" layoutX="12" layoutY="8" prefHeight="24" prefWidth="112" styleClass="label " text="SETTINGS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedCornerRadiusLabel" layoutX="16" layoutY="32" prefHeight="32" prefWidth="176" styleClass="label " text="Corner radius:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedLineSpacingLabel" layoutX="16" layoutY="56" prefHeight="32" prefWidth="176" styleClass="label " text="Line spacing:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedMaxDeathNoticesLabel" layoutX="16" layoutY="80" prefHeight="32" prefWidth="176" styleClass="label " text="Max death notices:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedLineHeightLabel" layoutX="16" layoutY="104" prefHeight="32" prefWidth="176" styleClass="label " text="Line height:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedIconScaleLabel" layoutX="16" layoutY="128" prefHeight="32" prefWidth="176" styleClass="label " text="Icon scale:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedXPositionLabel" layoutX="16" layoutY="152" prefHeight="32" prefWidth="176" styleClass="label " text="X position:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedYPositionLabel" layoutX="16" layoutY="176" prefHeight="32" prefWidth="176" styleClass="label " text="Y position:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedLayoutWidthLabel" layoutX="16" layoutY="200" prefHeight="32" prefWidth="176" styleClass="label " text="Layout width:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedLayoutHeightLabel" layoutX="16" layoutY="224" prefHeight="32" prefWidth="176" styleClass="label " text="Layout height:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedRightAlignLabel" layoutX="16" layoutY="248" prefHeight="32" prefWidth="176" styleClass="label " text="Right aligned:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedVisibilityLabel" layoutX="16" layoutY="272" prefHeight="32" prefWidth="176" styleClass="label " text="Visibility:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedLineSpacing" layoutX="200" layoutY="58" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedMaxDeathNotices" layoutX="200" layoutY="82" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedLineHeight" layoutX="200" layoutY="106" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedIconScale" layoutX="200" layoutY="130" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedXPosition" layoutX="200" layoutY="154" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedYPosition" layoutX="200" layoutY="178" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedLayoutWidth" layoutX="200" layoutY="202" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedLayoutHeight" layoutX="200" layoutY="226" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <CheckBox alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="KillfeedVisibility" layoutX="211" layoutY="280" prefHeight="24" prefWidth="32" styleClass="check-box " text="" textAlignment="LEFT" textFill="#333333" underline="false" wrapText="false">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </CheckBox>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedCornerRadiusLabel" visible="1"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedLineSpacingLabel"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedMaxDeathNoticesLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedLineHeightLabel" visible="1"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedIconScaleLabel" visible="1"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedXPositionLabel"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedYPositionLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedLayoutWidthLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedLayoutHeightLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedRightAlignLabel" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedVisibilityLabel" visible="1"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedVisibility"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedLayoutHeight"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedLineSpacing"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedMaxDeathNotices"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedLineHeight"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedIconScale"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedXPosition"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedYPosition"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedLayoutWidth"/>
+                    <CheckBox alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="KillfeedRightAlign" layoutX="211" layoutY="256" prefHeight="24" prefWidth="32" styleClass="check-box " text="" textAlignment="LEFT" textFill="#000000" underline="false" wrapText="false">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </CheckBox>
+                    <Data id="data-KillfeedRightAlign"/>
+                    <TextField alignment="CENTER" editable="true" focusTraversable="true" id="KillfeedCornerRadius" layoutX="200" layoutY="33" prefColumnCount="12" prefHeight="26" prefWidth="40" promptText="" styleClass="text-input text-field " text="">
+                      <font>
+                        <Font name="System Regular" size="12"/>
+                      </font>
+                    </TextField>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedCornerRadius" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedCornerRadiusAdd" layoutX="200" layoutY="32" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedCornerRadiusAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedLineSpacingAdd" layoutX="200" layoutY="56" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedLineSpacingAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedMaxDeathNoticesAdd" layoutX="200" layoutY="80" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedMaxDeathNoticesAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedLineHeightAdd" layoutX="200" layoutY="104" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedLineHeightAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedIconScaleAdd" layoutX="200" layoutY="128" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedIconScaleAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedXPositionAdd" layoutX="200" layoutY="152" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedXPositionAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedYPositionAdd" layoutX="200" layoutY="176" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedYPositionAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedLayoutWidthAdd" layoutX="200" layoutY="200" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedLayoutWidthAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedLayoutHeightAdd" layoutX="200" layoutY="226" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedLayoutHeightAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedRightAlignAdd" layoutX="200" layoutY="251" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedRightAlignAdd" visible="1"/>
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedVisibilityAdd" layoutX="200" layoutY="277" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </FlatButton>
+                    <Data cursor="DEFAULT" enabled="1" id="data-KillfeedVisibilityAdd" visible="1"/>
+                    <Data cursor="DEFAULT" id="data-KillfeedSettingsLabel"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedUpdateButton" layoutX="624" layoutY="280" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Update" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedApplyButton" layoutX="624" layoutY="240" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Apply" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" enabled="1" id="data-KillfeedUpdateButton" visible="1"/>
+                <Data cursor="DEFAULT" id="data-KillfeedApplyButton"/>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedPresetsButton" layoutX="624" layoutY="200" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Presets" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" enabled="1" id="data-KillfeedPresetsButton" visible="1"/>
+                <Data cursor="DEFAULT" id="data-KillfeedPreviewPanel"/>
+                <Data cursor="DEFAULT" enabled="" id="data-KillfeedNotFoundedDescription" visible=""/>
+                <Data cursor="DEFAULT" id="data-KillfeedNotFoundedTitle" visible=""/>
+                <Data cursor="DEFAULT" id="data-KillfeedNotFoundedAddButton"/>
+                <Data cursor="DEFAULT" id="data-KillfeedSettingsPanel"/>
+                <Data cursor="DEFAULT" id="data-KillfeedColorsPanel"/>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="KillfeedPresetsPanel" layoutX="0" layoutY="336" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="320" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedPresetsLabel" layoutX="16" layoutY="8" prefHeight="24" prefWidth="224" styleClass="label " text="PRESETS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <ListViewEx editable="false" fixedCellSize="30" focusTraversable="true" id="KillfeedPresetsList" layoutX="16" layoutY="32" prefHeight="266" prefWidth="224" styleClass="list-view ">
+                      <items xmlns:fx="http://javafx.com/fxml">
+                        <FXCollections fx:factory="observableArrayList"/>
+                      </items>
+                    </ListViewEx>
+                    <Data id="data-KillfeedPresetsLabel"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <Panel backgroundColor="#131313" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="KillfeedPresetsInfoPanel" layoutX="264" layoutY="336" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="192" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedPresetsInfoLabel" layoutX="12" layoutY="8" prefHeight="24" prefWidth="232" styleClass="label " text="INFORMATION" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Verdana Bold" size="16"/>
+                      </font>
+                    </LabelEx>
+                    <LabelEx alignment="TOP_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="KillfeedPresetsInfoDescription" layoutX="16" layoutY="35" prefHeight="144" prefWidth="216" styleClass="label " text="Select preset" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="true">
+                      <font>
+                        <Font name="Verdana" size="14"/>
+                      </font>
+                    </LabelEx>
+                    <Data id="data-KillfeedPresetsInfoLabel"/>
+                    <Data id="data-KillfeedPresetsInfoDescription"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedPresetsBackButton" layoutX="264" layoutY="536" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Back to settings" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedPresetsUsePresetButton" layoutX="264" layoutY="576" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Use preset" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" enabled="" id="data-KillfeedPresetsUsePresetButton"/>
+                <Data cursor="DEFAULT" id="data-KillfeedPresetsBackButton"/>
+                <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedPresetsUpdateListButton" layoutX="264" layoutY="616" prefHeight="32" prefWidth="248" styleClass="x-flat-button " text="Update list" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                  <font>
+                    <Font name="Verdana" size="16"/>
+                  </font>
+                </FlatButton>
+                <Data cursor="DEFAULT" id="data-KillfeedPresetsUpdateListButton"/>
+                <Data cursor="DEFAULT" id="data-KillfeedPresetsInfoPanel"/>
+                <Data cursor="DEFAULT" id="data-KillfeedPresetsPanel"/>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPaneEx>
+    <Data cursor="DEFAULT" draggable="NONE" enabled="1" id="data-CustomizeTabs" visible="1"/>
+    <Data cursor="DEFAULT" id="data-CustomizeLabel"/>
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="CustomizeSubLabel" layoutX="142" layoutY="0" prefHeight="48" prefWidth="184" styleClass="label " text="| OVERRIDES" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana Bold" size="14"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" id="data-CustomizeSubLabel"/>
+    <LabelEx alignment="CENTER_RIGHT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="CustomizeAdvices" layoutX="416" layoutY="0" prefHeight="48" prefWidth="448" styleClass="label " text="" textAlignment="RIGHT" textFill="#808080" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="12"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" id="data-CustomizeAdvices"/>
+  </children>
+</AnchorPane>
