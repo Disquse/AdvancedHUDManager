@@ -59,7 +59,6 @@ class Customize extends AbstractForm
         }    
     }
     
-
     /** 
      * K I L L F E E D
      */
@@ -74,6 +73,7 @@ class Customize extends AbstractForm
         global $hudlayout;
         if ( is_file("$huddir\\scripts\\hudlayout.res") and file_get_contents("$huddir\\scripts\\hudlayout.res") != NULL ) {
             $hudlayout = VDF::decodeFile("$huddir\\scripts\\hudlayout.res");
+            
             if ( $hudlayout['Resource/HudLayout.res']['HudDeathNotice'] and ! empty($hudlayout['Resource/HudLayout.res']['HudDeathNotice']) ) {
                 $this->KillfeedSettingsPanel->visible = true; $this->KillfeedPreviewPanel->visible = true;
                 $this->KillfeedColorsPanel->visible = true; $this->KillfeedApplyButton->visible = true;
@@ -235,7 +235,7 @@ class Customize extends AbstractForm
                                 $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['TeamBlue']]);
                                 $this->KillfeedBluColor->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
-                                UXDialog::showAndWait("Error! Invalid color of TeamBlue. Can't read value. But you can replace it.");       
+                                echo("Error! Invalid color of TeamBlue. Can't read value!");       
                             }
                         }
                     } else {
@@ -256,7 +256,7 @@ class Customize extends AbstractForm
                                 $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['TeamRed']]);
                                 $this->KillfeedRedColor->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
-                                UXDialog::showAndWait("Error! Invalid color of TeamRed. Can't read value. But you can replace it.");       
+                                echo("Error! Invalid color of TeamRed. Can't read value!");       
                             }
                         }
                     } else {
@@ -276,7 +276,7 @@ class Customize extends AbstractForm
                                 $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['IconColor']]);
                                 $this->KillfeedIconColor->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
-                                UXDialog::showAndWait("Error! Invalid color of IconColor. Can't read value. But you can replace it.");       
+                                echo("Error! Invalid color of IconColor. Can't read value!");       
                             }
                         }
                     } else {
@@ -297,7 +297,7 @@ class Customize extends AbstractForm
                                 $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['BaseBackgroundColor']]);
                                 $this->KillfeedPanelBackground->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
-                                UXDialog::showAndWait("Error! Invalid color of BaseBackgroundColor. Can't read value. But you can replace it.");       
+                                echo("Error! Invalid color of BaseBackgroundColor. Can't read value!");       
                             }
                         }
                     } else {
@@ -318,7 +318,7 @@ class Customize extends AbstractForm
                                 $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['LocalPlayerColor']]);
                                 $this->KillfeedPanelLocalPlayer->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
-                                UXDialog::showAndWait("Error! Invalid color of LocalPlayerColor. Can't read value. But you can replace it.");       
+                                echo("Error! Invalid color of LocalPlayerColor. Can't read value!");       
                             }
                         }
                     } else {
@@ -339,7 +339,7 @@ class Customize extends AbstractForm
                                 $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['LocalBackgroundColor']]);
                                 $this->KillfeedLocalBackground->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
-                                $this->doKillfeedLocalBackgroundAddClickLeft();      
+                                echo("Error! Invalid color of LocalBackground. Can't read value!");    
                             }
                         }
                     } else {
@@ -347,7 +347,8 @@ class Customize extends AbstractForm
                     }
                     
                 } else {
-                    UXDialog::showAndWait("Error! Fieldname was broken. But we're already fixed this.");
+                    UXDialog::showAndWait("Error! Fieldname of killfeed is broken!");
+                    // replace it and fix
                 }
             } else {
                 $this->KillfeedSettingsPanel->visible = false; $this->KillfeedPreviewPanel->visible = false;

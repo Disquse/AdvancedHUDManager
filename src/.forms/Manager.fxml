@@ -98,7 +98,7 @@
                         <Font name="Verdana" size="16"/>
                       </font>
                     </FlatButton>
-                    <Data cursor="DEFAULT" id="data-ManagerCloseUpdateButton"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-ManagerCloseUpdateButton" visible="1"/>
                     <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="ManagerGitHubUpdateButton" layoutX="8" layoutY="68" prefHeight="32" prefWidth="240" styleClass="x-flat-button " text="Update via GitHub" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
                         <Font name="Verdana" size="16"/>
@@ -109,15 +109,15 @@
                         <Font name="Verdana" size="16"/>
                       </font>
                     </FlatButton>
-                    <Data cursor="DEFAULT" id="data-ManagerHelpUpdateButton"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-ManagerHelpUpdateButton" visible="1"/>
                     <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="labelAlt" layoutX="8" layoutY="3" prefHeight="24" prefWidth="208" styleClass="label " text="Update HUD:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
                         <Font name="Verdana Bold" size="16"/>
                       </font>
                     </LabelEx>
                     <Data cursor="DEFAULT" enabled="1" id="data-labelAlt" visible="1"/>
-                    <Data cursor="DEFAULT" id="data-ManagerPureUpdateButton"/>
-                    <Data cursor="DEFAULT" id="data-ManagerGitHubUpdateButton"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-ManagerPureUpdateButton" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-ManagerGitHubUpdateButton" visible="1"/>
                   </children>
                   <titleFont>
                     <Font name="System Regular" size="12"/>
@@ -304,7 +304,6 @@
                 <Panel backgroundColor="#1a1a1a" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="ManagerHudsTFStatisticPanel" layoutX="264" layoutY="160" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="184" prefWidth="256" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
                   <children>
                     <Data cursor="DEFAULT" id="data-buttonAlt"/>
-                    <Data cursor="DEFAULT" id="data-button3"/>
                     <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="label3" layoutX="8" layoutY="0" prefHeight="24" prefWidth="208" styleClass="label " text="HudsTF Statistic:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
                         <Font name="Verdana Bold" size="16"/>
@@ -349,7 +348,7 @@
                         <Font name="Verdana" size="16"/>
                       </font>
                     </FlatButton>
-                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="button3" layoutX="8" layoutY="144" prefHeight="32" prefWidth="240" styleClass="x-flat-button " text="Open HudsTF Page" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="ManagerHudsTFOpenButton" layoutX="8" layoutY="144" prefHeight="32" prefWidth="240" styleClass="x-flat-button " text="Open HudsTF Page" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
                         <Font name="Verdana" size="16"/>
                       </font>
@@ -357,6 +356,7 @@
                     <Data cursor="DEFAULT" id="data-ManagerHudsTFTotalViews"/>
                     <Data cursor="DEFAULT" id="data-ManagerHudsTFTotalRating"/>
                     <Data id="data-ManagerHudsTFTotalDownloads"/>
+                    <Data id="data-ManagerHudsTFOpenButton"/>
                   </children>
                   <titleFont>
                     <Font name="System Regular" size="12"/>
@@ -528,6 +528,7 @@
                 </Panel>
                 <Data cursor="DEFAULT" id="data-ManagerGitHubStatisticPanel"/>
                 <Data cursor="DEFAULT" id="data-panel"/>
+                <Data cursor="DEFAULT" id="data-ManagerAHUDMStatisticPanel"/>
               </children>
             </AnchorPane>
           </content>

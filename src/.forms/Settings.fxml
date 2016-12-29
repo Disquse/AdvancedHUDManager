@@ -2,7 +2,7 @@
 <?import javafx.scene.*?><?import javafx.collections.*?><?import javafx.scene.layout.*?><?import javafx.scene.control.*?><?import javafx.scene.text.*?><?import javafx.scene.image.*?><?import javafx.scene.shape.*?><?import javafx.scene.web.*?><?import java.lang.*?><?import org.develnext.jphp.ext.javafx.classes.data.*?><?import org.develnext.jphp.ext.javafx.support.*?><?import org.develnext.jphp.ext.javafx.support.control.*?><?import org.develnext.jphp.ext.game.support.*?><AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" focusTraversable="false" id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="879" styleClass="">
   <children>
     <Rectangle arcHeight="0" arcWidth="0" fill="#131313" focusTraversable="false" height="48" id="rectAlt" layoutX="0" layoutY="0" stroke="#ffffff00" strokeType="INSIDE" strokeWidth="2" styleClass="" width="880"/>
-    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsLabel" layoutX="16" layoutY="0" prefHeight="48" prefWidth="520" styleClass="label " text="SETTINGS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsLabel" layoutX="16" layoutY="0" prefHeight="48" prefWidth="184" styleClass="label " text="SETTINGS" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
       <font>
         <Font name="Verdana Bold" size="18"/>
       </font>
@@ -75,7 +75,7 @@
         <Font name="Verdana" size="16"/>
       </font>
     </FlatButton>
-    <Data id="data-SettingsLabel"/>
+    <Data cursor="DEFAULT" id="data-SettingsLabel"/>
     <Data id="data-SettingsProfilesLabel"/>
     <Data id="data-SettingsProfilesEdit"/>
     <Data id="data-SettingsProfilesRemove"/>
@@ -84,5 +84,12 @@
     <Data id="data-SettingsProfilesTF2DirectorySave"/>
     <Data cursor="DEFAULT" id="data-SettingsProfilesSetDefault"/>
     <Data cursor="DEFAULT" id="data-SettingsProfileList"/>
+    <LabelEx alignment="CENTER_RIGHT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsVersionLabel" layoutX="672" layoutY="0" prefHeight="48" prefWidth="192" styleClass="label " text="29.12.16 BETA" textAlignment="RIGHT" textFill="#808080" underline="false" wrapText="false">
+      <font>
+        <Font name="Verdana" size="12"/>
+      </font>
+    </LabelEx>
+    <Data cursor="DEFAULT" id="data-SettingsVersionLabel"/>
+    <Data cursor="DEFAULT" id="data-SettingsProfilesTF2Directory"/>
   </children>
 </AnchorPane>

@@ -36,9 +36,6 @@
   <target id="buttonAlt">
     <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
   </target>
-  <target id="button3">
-    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
-  </target>
   <target id="ManagerUpdateHUDButton">
     <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
   </target>
@@ -53,5 +50,8 @@
   </target>
   <target id="ManagerHUDLogoBG">
     <behaviour color="#000000" offsetX="0" offsetY="0" radius="10" spread="0" type="behaviour\custom\DropShadowEffectBehaviour" when="ALWAYS"/>
+  </target>
+  <target id="ManagerHudsTFOpenButton">
+    <behaviour threshold="0.3" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
   </target>
 </behaviours>

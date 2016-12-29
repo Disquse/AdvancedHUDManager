@@ -1,6 +1,8 @@
 <?php
 namespace app\forms;
 
+use php\gui\UXApplication;
+use php\lang\Thread;
 use php\gui\UXDatePickerWrapper;
 use php\gui\UXDatePicker;
 use app\modules\VDF;
@@ -25,6 +27,19 @@ use php\gui\event\UXEvent;
 
 class Main extends AbstractForm
 { 
+   
+   // Threading function 
+   function aSync($func, $callback){
+        $thread = new Thread(function() use ($func, $callback){
+            $return = $func();
+            
+            UXApplication::runLater(function () use ($callback, $return) {
+                $callback($return); 
+            });
+        });
+        
+        $thread->start();
+    }
     
    /**
      * @event showing 
@@ -50,6 +65,7 @@ class Main extends AbstractForm
         
         Animation::moveTo($this->HeaderButtonPanel, 250, 830.0, 10.0);
         Animation::moveTo($this->Forms, 250, 1.0, 170.0);       
+        
           
         if ( fs::isFile("settings.dat") ) { 
             $this->form('Welcome')->HeaderWelcomeLabel->text = "WELCOME BACK!";
@@ -139,19 +155,16 @@ class Main extends AbstractForm
      **/
     function doMenuWelcomeButtonClickLeft(UXMouseEvent $event = null)
     {    
-        $this->MenuPanel->enabled = false;
-        waitAsync(350, function () use ($event) {
-            $this->MenuPanel->enabled = true;
-        });             
-        $this->Bugfix->visible = false;
+        $this->MenuPanel->enabled = false;           
         Animation::moveTo($this->MenuSelector, 200, 0.0, 1.0);
         Animation::moveTo($this->Forms, 150, 1.0, 700.0);   
         waitAsync(150, function () use ($event) {
             $this->Forms->phys->loadScene('Welcome');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
         });    
-        waitAsync(300, function () use ($event) { 
-            Animation::moveTo($this->Forms, 150, 1.0, 170.0);
+        waitAsync(450, function () use ($event) { 
+            $this->MenuPanel->enabled = true;
+            $this->Forms->y = 170;
         });          
     }
     
@@ -160,17 +173,17 @@ class Main extends AbstractForm
      **/
     function doMenuManagerButtonClickLeft(UXMouseEvent $event = null)
     {   
-        $this->MenuPanel->enabled = false;
-        waitAsync(350, function () use ($event) {
-            $this->MenuPanel->enabled = true;
-        });      
-        $this->Bugfix->visible = false;
+        $this->MenuPanel->enabled = false;           
         Animation::moveTo($this->MenuSelector, 200, 170.0, 1.0);
         Animation::moveTo($this->Forms, 150, 1.0, 700.0);   
         waitAsync(150, function () use ($event) {
             $this->Forms->phys->loadScene('Manager');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
-        });               
+        });    
+        waitAsync(500, function () use ($event) { 
+            $this->MenuPanel->enabled = true;
+            $this->Forms->y = 170;
+        });                
     }
     
     /**
@@ -178,17 +191,17 @@ class Main extends AbstractForm
      **/
     function doMenuCustomizeButtonClickLeft(UXMouseEvent $event = null)
     { 
-        $this->MenuPanel->enabled = false;
-        waitAsync(350, function () use ($event) {
-            $this->MenuPanel->enabled = true;
-        });        
-        $this->Bugfix->visible = false;
+        $this->MenuPanel->enabled = false;           
         Animation::moveTo($this->MenuSelector, 200, 354.0, 1.0);
         Animation::moveTo($this->Forms, 150, 1.0, 700.0);   
         waitAsync(150, function () use ($event) {
             $this->Forms->phys->loadScene('Customize');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
-        });                
+        });    
+        waitAsync(500, function () use ($event) { 
+            $this->MenuPanel->enabled = true;
+            $this->Forms->y = 170;
+        });                 
     }
     
     /**
@@ -196,17 +209,17 @@ class Main extends AbstractForm
      **/    
     function doMenuOtherButtonClickLeft(UXMouseEvent $event = null)
     {  
-        $this->MenuPanel->enabled = false;
-        waitAsync(350, function () use ($event) {
-            $this->MenuPanel->enabled = true;
-        });       
-        $this->Bugfix->visible = false;
+        $this->MenuPanel->enabled = false;           
         Animation::moveTo($this->MenuSelector, 200, 535.0, 1.0);
         Animation::moveTo($this->Forms, 150, 1.0, 700.0);   
         waitAsync(150, function () use ($event) {
             //$this->Forms->phys->loadScene('Other');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
-        });  
+        });    
+        waitAsync(400, function () use ($event) { 
+            $this->MenuPanel->enabled = true;
+            $this->Forms->y = 170;
+        });    
           
     }
     
@@ -215,17 +228,17 @@ class Main extends AbstractForm
      **/    
     function doMenuSettingsButtonClickLeft(UXMouseEvent $event = null)
     {   
-        $this->MenuPanel->enabled = false;
-        waitAsync(350, function () use ($event) {
-            $this->MenuPanel->enabled = true;
-        });      
-        $this->Bugfix->visible = false;
+        $this->MenuPanel->enabled = false;           
         Animation::moveTo($this->MenuSelector, 200, 703.0, 1.0);
         Animation::moveTo($this->Forms, 150, 1.0, 700.0);   
         waitAsync(150, function () use ($event) {
             $this->Forms->phys->loadScene('Settings');
             Animation::moveTo($this->Forms, 150, 1.0, 170.0);
-        });             
+        });    
+        waitAsync(400, function () use ($event) { 
+            $this->MenuPanel->enabled = true;
+            $this->Forms->y = 170;
+        });               
     }
     
     /**
@@ -243,11 +256,7 @@ class Main extends AbstractForm
         waitAsync(150, function () use ($event) {
             Animation::moveTo($this->ClosePanel, 300, 1.0, 1.0);
             $this->AHUDMLogo->enabled = false;
-            $this->MenuWelcomeButton->enabled = false;    
-            $this->MenuManagerButton->enabled = false;   
-            $this->MenuCustomizeButton->enabled = false;  
-            $this->MenuOtherButton->enabled = false;
-            $this->MenuSettingsButton->enabled = false;   
+            $this->MenuPanel->enabled = false; 
             $this->Forms->enabled = false;   
         });   
     }
@@ -282,17 +291,13 @@ class Main extends AbstractForm
         Animation::moveTo($this->ClosePanel, 300, 1.0, -150.0);
         
         waitAsync(150, function () use ($event) {
-            if ( $headerwarningreturn = true ) {
+            if ( $headerwarningreturn == true ) {
                 $headerwarningreturn = false;
                 Animation::moveTo($this->HeaderWarningButton, 300, 10.0, 10.0);
             }
             Animation::moveTo($this->HeaderButtonPanel, 300, 830.0, 10.0);
             $this->AHUDMLogo->enabled = true;
-            $this->MenuWelcomeButton->enabled = true;    
-            $this->MenuManagerButton->enabled = true;   
-            $this->MenuCustomizeButton->enabled = true;  
-            $this->MenuOtherButton->enabled = true;
-            $this->MenuSettingsButton->enabled = true;   
+            $this->MenuPanel->enabled = false;
             $this->Forms->enabled = true;   
         });         
     }

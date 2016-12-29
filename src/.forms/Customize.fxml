@@ -561,7 +561,7 @@
                         <Font name="Verdana" size="14"/>
                       </font>
                     </FlatButton>
-                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedLocalBackgroundAdd" layoutX="194" layoutY="152" prefHeight="25" prefWidth="48" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+                    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="KillfeedLocalBackgroundAdd" layoutX="194" layoutY="153" prefHeight="25" prefWidth="48" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
                         <Font name="Verdana" size="14"/>
                       </font>

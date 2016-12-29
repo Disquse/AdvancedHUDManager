@@ -26,16 +26,15 @@ class Module extends AbstractModule
      **/
     function doProfilesrefreshAction(ScriptEvent $event = null)
     {
-        $profiles = $this->profiles->toArray();
-        foreach ($profiles as $profile) {
-            $profilelist[] = $profile['ProfileName'];
-        }
-        
-        $this->WelcomeProfileList->items->clear();
-        $this->WelcomeProfileList->items->addAll($profilelist);
-        
-        //$this->SettingsProfileList->items->clear();
-        //$this->SettingsProfileList->items->addAll($profilelist);
+            $profiles = $this->profiles->toArray();
+            foreach ($profiles as $profile) {
+                $profilelist[] = $profile['ProfileName'];
+            }
+            $this->form('Welcome')->WelcomeProfileList->items->clear();
+            $this->form('Welcome')->WelcomeProfileList->items->addAll($profilelist);
+            //$this->SettingsProfileList->items->clear();
+            //$this->SettingsProfileList->items->addAll($profilelist);
     }
+    
 
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project author="Disquse" authorOS="Windows 10" createdAt="1465906843883" ideName="DevelNext" ideVersion="16 rc-2" ideVersionHash="2016122612" name="AdvancedHUDManager" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1482936409393">
+<project author="Disquse" authorOS="Windows 10" createdAt="1465906843883" ideName="DevelNext" ideVersion="16 rc-2" ideVersionHash="2016122612" name="AdvancedHUDManager" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1483039508376">
   <openedFiles>
   <file src="~project"/>
-    <file selected="1" src="src/.forms/Main.fxml"/>
+    <file src="src/.forms/Main.fxml"/>
     <file src="src/.forms/Welcome.fxml"/>
     <file src="src/.forms/Manager.fxml"/>
-    <file src="src/.forms/Customize.fxml"/>
+    <file selected="1" src="src/.forms/Customize.fxml"/>
     <file src="src/.forms/Settings.fxml"/>
     <file src="src/.scripts/Module"/>
     <file src="src/.scripts/Checker"/>
@@ -420,12 +420,7 @@
     <file inRootDir="1" src="src/app/forms/Setting.php"/>
     <file inRootDir="1" src="src/.forms/Setting.conf"/>
     <file inRootDir="1" src="app/forms/Settings.php (1)"/>
-    <file inRootDir="1" src="src/.forms/test.fxml">
-      <links>
-        <link src="src/app/forms/test.php"/>
-        <link src="src/.forms/test.conf"/>
-      </links>
-    </file>
+    <file inRootDir="1" src="src/.forms/test.fxml"/>
     <file inRootDir="1" src="src/app/forms/test.php"/>
     <file inRootDir="1" src="src/.forms/test.conf"/>
     <file inRootDir="1" src="src/app/forms/Setting.behaviour"/>
@@ -434,6 +429,7 @@
     <file inRootDir="1" src="src/app/forms/test.php.axml"/>
     <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/Setting.fxml.conf"/>
     <file inRootDir="1" src=".dn/ide/editors/FormEditor/src/.forms/test.fxml.conf"/>
+    <file inRootDir="1" src="C:/Users/Disquse/DevelNextProjects/faq-thread/src/.forms/MainForm2.fxml"/>
     <file inRootDir="1" src="lib"/>
     <file inRootDir="1" src="src"/>
     <file inRootDir="1" src="build"/>

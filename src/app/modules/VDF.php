@@ -23,16 +23,16 @@ class VDF
         $token = $token ? $token : self::$STRING;
         $opening = $i + 1;
         $closing = $opening;
-        $ci = str::pos($line,$token,$opening);
+        $ci = str::pos($line, $token, $opening);
         while ($ci !== -1) {
-            if (str::sub($line,$ci - 1, $ci) !== "\\") {
+            if (str::sub($line, $ci - 1, $ci) !== "\\") {
                 $closing = $ci;
                 break;
             }
-            $ci = str::pos($line,$token,$ci + 1);
+            $ci = str::pos($line, $token, $ci + 1);
         }
      
-        $finalstr = str::sub($line,$opening,$closing);
+        $finalstr = str::sub($line, $opening, $closing);
         return [$finalstr, $i + str::length($finalstr) + 1];
     }
      
@@ -40,12 +40,12 @@ class VDF
     {
         $ci = $i;
         while ($ci < str::length($line)) {
-            if (self::ArraySearch(self::$WHITESPACE,str::sub($line,$ci,$ci + 1)) > -1) {
+            if (self::ArraySearch(self::$WHITESPACE, str::sub($line, $ci, $ci + 1)) > -1) {
                 break;
             }
             $ci += 1;
         }
-        return [str::sub($line,$i,$ci), $ci];
+        return [str::sub($line, $i, $ci), $ci];
     }
      
     private static function _parse($stream, $ptr = 0)
@@ -156,6 +156,7 @@ class VDF
         $_parsed = self::_parse($string);
         $res = $_parsed[0];
         $ptr = $_parsed[1];
+		
         return $res;
     }
 	
@@ -174,6 +175,7 @@ class VDF
         }
         return -1;
     }
+	
     private static function RegexReplace($pattern,$string,$replacement)
     {
         $regex = Regex::of($pattern)->with($string);

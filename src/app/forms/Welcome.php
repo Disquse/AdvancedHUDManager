@@ -229,16 +229,23 @@ class Welcome extends AbstractForm
         waitAsync(1000, function () use ($event) {
             global $github, $hudstf, $ahudmarray, $gamedir, $huddir, $checkerstatus;
             
+            $this->form('Main')->MenuManagerButton->enabled = false;
+            $this->form('Main')->MenuCustomizeButton->enabled = false;
+            $this->form('Main')->MenuOtherButton->enabled = false;
+            
             $selectedprofile = $this->WelcomeProfileList->selected;
             
             if ( $selectedprofile != "" ) {  // If selected profile isn't blank    
-                $profileread = $this->profiles->toArray();    
-            print_r($profileread);   
+                $profileread = $this->profiles->toArray();  
+                  
+                print_r($profileread);   
+                
                 if ( $profileread[$selectedprofile] and $profileread[$selectedprofile]['ProfileName'] and $profileread[$selectedprofile]['HUDDirectory'] ) { // Если файла профиля не существует
                     $profilename = $profileread[$selectedprofile]["ProfileName"];
                     $huddir = $profileread[$selectedprofile]["HUDDirectory"]; 
                     $huddir = str::replace($huddir, "\/", "//"); // Slashes...
-                print_r($huddir); 
+                    
+                    print_r($huddir); 
                     
                     if ( fs::isDir("$huddir") ) {          
                         if ( fs::isFile("$huddir\\info.vdf") ) { // Check for info.vdf                       
@@ -247,14 +254,15 @@ class Welcome extends AbstractForm
                         
                             // Scanning for supported services
                             if (str::trim($ahudmarray["Main"]["GitHubRepo"]) != "" ) {        
-                                if ( $checkerstatus['github'] == true ) {              
+                                if ( $checkerstatus['github'] == true ) {   
                                     $githubrate = stream::getContents("https://api.github.com/rate_limit");
                                     $githubrate = Json::decode($githubrate);
-                                    
+
                                     if ( $githubrate["resources"]["core"]["remaining"] > 4 ) {
                                         $githubrepo = str::split($ahudmarray["Main"]["GitHubRepo"], "/");
                                         $ahudmarray["Main"]["GitHubUser"] = $githubrepo[0];
                                         $ahudmarray["Main"]["GitHubRepo"] = $githubrepo[1];
+                                        
                                         $github = Stream::getContents("https://api.github.com/repos/".$ahudmarray["Main"]["GitHubUser"]."/".$ahudmarray["Main"]["GitHubRepo"]);
                                         $github = Json::decode($github);
                                         
@@ -262,7 +270,8 @@ class Welcome extends AbstractForm
                                             $githubstatus = "true";
                                         } else {
                                            $githubstatus = "false";
-                                       }
+                                        }
+                                        
                                     } else {
                                         $githubstatus = "false";
                                         $this->form('Main')->toast("Warning! Your IP-adress has exhausted GitHub API limits. GitHub features disabled.", 3000);
@@ -311,33 +320,35 @@ class Welcome extends AbstractForm
                                     // If no main source, then use info.vdf
                                 }
                             }
-                            // Parsing main info and statisctic
+                            
+                            
+                            // Parsing main info and statisctic 
                             if ( $githubstatus == "true" ) {
-                                $githubstatistic = Stream::getContents("https://api.github.com/repos/".$ahudmarray["Main"]["GitHubUser"]."/".$ahudmarray["Main"]["GitHubRepo"]);
-                                $githubratecheck = Regex::of("API rate limit exceeded for (.*?)")->with($githubstatistic);
-                                if (! $githubratecheck->find() ) {
-                                    $this->form('Manager')->ManagerGitHubStatisticPanel->visible = true;
-                                    $githubstatistic = json::decode($githubstatistic);
-                                    $this->form('Manager')->ManagerGitHubTotalDownloads->text = $githubstatistic['stargazers_count'];
-                                    $this->form('Manager')->ManagerGitHubTotalWatchers->text = $githubstatistic['watchers_count'];
-                                    $this->form('Manager')->ManagerGitHubTotalForks->text = $githubstatistic['forks_count'];
-                                    $this->form('Manager')->ManagerGitHubTotalStars->text = $githubstatistic['stargazers_count'];
-                                    $this->form('Manager')->ManagerGitHubTotalIssues->text = $githubstatistic['open_issues_count'];
+                                $githubstatistic = $github;
+                                $this->form('Manager')->ManagerGitHubStatisticPanel->visible = true;
+                                $this->form('Manager')->ManagerGitHubTotalDownloads->text = $githubstatistic['stargazers_count'];
+                                $this->form('Manager')->ManagerGitHubTotalWatchers->text = $githubstatistic['watchers_count'];
+                                $this->form('Manager')->ManagerGitHubTotalForks->text = $githubstatistic['forks_count'];
+                                $this->form('Manager')->ManagerGitHubTotalStars->text = $githubstatistic['stargazers_count'];
+                                $this->form('Manager')->ManagerGitHubTotalIssues->text = $githubstatistic['open_issues_count'];
                                     
+                                $githubgetdownloadsinfo = function() {
+                                    global $ahudmarray, $githubdownloads;
                                     $githubdownloads = Stream::getContents("https://api.github.com/repos/".$ahudmarray["Main"]["GitHubUser"]."/".$ahudmarray["Main"]["GitHubRepo"]."/"."downloads");
                                     $githubdownloads = Json::decode($githubdownloads);
-                                    $githubdownloadsarraycount = count($githubdownloads);
-                                    for ( $i = 0; $i < $githubdownloadsarraycount; $i++ ) {
-                                        $githubdownloadscount += $githubdownloads[$i]['download_count'];
+                                };    
+                                $githubusedownloadsinfo = function() {
+                                    global $githubdownloads;
+                                    foreach ($githubdownloads as $githubdownload){
+                                        $githubdownloadscount += $githubdownload['download_count'];
                                     }
                                     $this->form('Manager')->ManagerGitHubTotalDownloads->text = $githubdownloadscount;
-                                    
                                     $this->form('Manager')->ManagerGitHubIssuesLabel->visible = true;
                                     $this->form('Manager')->ManagerGitHubIssuesList->visible = true;
                                     $this->form('Manager')->ManagerGitHubAddIssue->visible = true;
-                                } else {
-                                    $this->form('Manager')->ManagerGitHubStatisticPanel->visible = false;
-                                }                                                     
+                                };
+                                $this->form('Main')->aSync($githubgetdownloadsinfo, $githubusedownloadsinfo);
+                                               
                             } else {
                                 $this->form('Manager')->ManagerGitHubStatisticPanel->visible = false;
                                 $this->form('Manager')->ManagerGitHubIssuesLabel->visible = false;
@@ -345,6 +356,7 @@ class Welcome extends AbstractForm
                                 $this->form('Manager')->ManagerGitHubAddIssue->visible = false;
                                 $this->form('Manager')->ManagerGitHubUpdateIssue->visible = false;
                             }
+                            
                             if ( $hudstfstatus == "true" ) {
                                 $hudstferrors = 0;
                                 $hudstfdownloads = Regex::of('<h2>Downloads: (.*?)</h2>')->with($hudstf);
@@ -381,8 +393,6 @@ class Welcome extends AbstractForm
                             } else {
                                 $this->form('Manager')->ManagerHudsTFStatisticPanel->visible = false;
                             }
-                            
-                            
                             
                             
                             // Set-up
@@ -523,8 +533,22 @@ class Welcome extends AbstractForm
                                 
                             }
                             */
-                            $this->form('Main')->toast("Profile was successfully loaded!", 2000);
+                            
+
+                            $preupdatecustomizes = function() {
+                                $this->form('Customize')->doDamageIndicatorUpdateButtonClickLeft();
+                                $this->form('Customize')->doKillfeedUpdateButtonClickLeft();
+                                
+                            }; 
+                            $loadingfinished = function() { 
+                                $this->form('Main')->toast("Profile was successfully loaded!", 2000);
+                                $this->form('Main')->MenuManagerButton->enabled = true;
+                                $this->form('Main')->MenuCustomizeButton->enabled = true;
+                                $this->form('Main')->MenuOtherButton->enabled = true;
+                            };
+                            $this->form('Main')->aSync($preupdatecustomizes, $loadingfinished);
                             $this->form('Main')->doMenuManagerButtonClickLeft(); 
+                            
                         } else {
                             $this->form('Main')->toast("Info.vdf file was missed and now restored. Please, wait.", 3000); 
                             VDF::encodeFile('$huddir\\info.vdf', '"hud" { "ui_version" "1" }');
@@ -532,13 +556,14 @@ class Welcome extends AbstractForm
                             $this->doWelcomeNormalModeButtonClickLeft();
                         }                                   
                     } else {
-                        $this->form('Main')->toast("'$profilename' is broken. HUD directory is missed! Please, re-create it.", 2000);
+                        $this->form('Main')->toast("HUD directory is missed! Please, re-create profile.", 2000);
                         $this->doWelcomeCreateProfileButtonClickLeft(); 
                         $this->WelcomeCreateProfileName->text = $profilename;                       
                         $this->WelcomeCreateProfileHUDDir->text = $huddir;
                         
-                        fs::delete("profiles\\$profilename\\");
+                        fs::delete("profiles\\$profilename");
                         $this->profiles->removeSection($profilename);
+                        $thos->profiles->save();
                         
                         $this->profilesrefresh->call();
                     }
@@ -572,17 +597,22 @@ class Welcome extends AbstractForm
      */
     function doConstruct(UXEvent $event = null)
     {    
-        $userenv = System::getEnv();
-        if ( is_file('settings.ini') ) {
-            $this->HeaderWelcomeLabel->text = 'WELCOME BACK, '.$userenv['USERNAME'].' !';
-        } else {
-            $this->HeaderWelcomeLabel->text = 'WELCOME, '.$userenv['USERNAME'].' !';
-        } 
-           
-        $this->profilesrefresh->call();
+        $constructstart = function() { 
+            global $greetingtext;
+            $userenv = System::getEnv();
+            if ( is_file('settings.ini') ) {
+                $greetingtext = 'WELCOME BACK, '.$userenv['USERNAME'].' !';
+            } else {
+                $greetingtext = 'WELCOME, '.$userenv['USERNAME'].' !';
+            } 
+        };
         
-        waitAsync(500, function () use ($event) { 
+        $constructfinish = function() { 
+            global $greetingtext;
+            $this->HeaderWelcomeLabel->text = $greetingtext;
             $this->WelcomeNewsBrowser->url = 'http://ahudm.disquse.ru/news';
-        });
+            $this->profilesrefresh->call();
+        };
+        $this->form('Main')->aSync($constructstart, $constructfinish);
     }
 }

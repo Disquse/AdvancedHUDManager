@@ -258,4 +258,22 @@ class Manager extends AbstractForm
         global $huddir;
         open("$huddir\\");
     }
+
+    /**
+     * @event ManagerGitHubOpenButton.click-Left 
+     */
+    function doManagerGitHubOpenButtonClickLeft(UXMouseEvent $event = null)
+    {    
+        global $ahudmarray;
+        browse('https://github.com/'.$ahudmarray['Main']['GitHubUser'].'/'.$ahudmarray['Main']['GitHubRepo']);
+    }
+
+    /**
+     * @event ManagerHudsTFOpenButton.click-Left 
+     */
+    function doManagerHudsTFOpenButtonClickLeft(UXMouseEvent $event = null)
+    {    
+        global $ahudmarray;
+        browse('http://huds.tf/forum/showthread.php?tid='.$ahudmarray['HudsTFID']);
+    }
 }
