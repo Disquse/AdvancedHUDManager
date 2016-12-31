@@ -12,10 +12,7 @@
   <target id="SettingsProfilesRemove">
     <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
   </target>
-  <target id="SettingsProfilesTF2DirectoryBrowse">
-    <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
-  </target>
-  <target id="SettingsProfilesTF2DirectorySave">
+  <target id="SettingsTF2DirectorySave">
     <behaviour threshold="0.45444444444444" type="behaviour\custom\BloomEffectBehaviour" when="CLICK"/>
   </target>
 </behaviours>

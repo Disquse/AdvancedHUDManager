@@ -245,25 +245,28 @@ class Welcome extends AbstractForm
                     $huddir = $profileread[$selectedprofile]["HUDDirectory"]; 
                     $huddir = str::replace($huddir, "\/", "//"); // Slashes...
                     
+                    if ( is_dir("profiles\\$profilename") ) { mkdir("profiles\\$profilename"); }
+                    
+                    
                     print_r($huddir); 
                     
                     if ( fs::isDir("$huddir") ) {          
                         if ( fs::isFile("$huddir\\info.vdf") ) { // Check for info.vdf                       
                             $ahudmarray = VDF::decodeFile("$huddir\\info.vdf");
-                            $ahudmarray = $ahudmarray['AHUDM'];
+                            $ahudmarray = $ahudmarray['ahudm'];
                         
                             // Scanning for supported services
-                            if (str::trim($ahudmarray["Main"]["GitHubRepo"]) != "" ) {        
+                            if (str::trim($ahudmarray["main"]["githubrepo"]) != "" ) {        
                                 if ( $checkerstatus['github'] == true ) {   
                                     $githubrate = stream::getContents("https://api.github.com/rate_limit");
                                     $githubrate = Json::decode($githubrate);
 
                                     if ( $githubrate["resources"]["core"]["remaining"] > 4 ) {
-                                        $githubrepo = str::split($ahudmarray["Main"]["GitHubRepo"], "/");
-                                        $ahudmarray["Main"]["GitHubUser"] = $githubrepo[0];
-                                        $ahudmarray["Main"]["GitHubRepo"] = $githubrepo[1];
+                                        $githubrepo = str::split($ahudmarray["main"]["githubrepo"], "/");
+                                        $ahudmarray["main"]["githubuser"] = $githubrepo[0];
+                                        $ahudmarray["main"]["githubrepo"] = $githubrepo[1];
                                         
-                                        $github = Stream::getContents("https://api.github.com/repos/".$ahudmarray["Main"]["GitHubUser"]."/".$ahudmarray["Main"]["GitHubRepo"]);
+                                        $github = Stream::getContents("https://api.github.com/repos/".$ahudmarray["main"]["githubuser"]."/".$ahudmarray["main"]["githubrepo"]);
                                         $github = Json::decode($github);
                                         
                                         if ( $github['message'] or $github['message'] != "Not Found" ) {
@@ -281,9 +284,9 @@ class Welcome extends AbstractForm
                                 }                                       
                             }   
                             
-                            if (str::trim($ahudmarray["Main"]["HudsTFID"]) != "" ) {
+                            if (str::trim($ahudmarray["main"]["hudstfid"]) != "" ) {
                                 if ( $checkerstatus['hudstf'] == true ) {    
-                                    $hudstf = stream::getContents('http://huds.tf/forum/showthread.php?tid='.$ahudmarray["Main"]["HudsTFID"]);
+                                    $hudstf = stream::getContents('http://huds.tf/forum/showthread.php?tid='.$ahudmarray["main"]["hudstfid"]);
                                     $hudstfcheck = Regex::of('<h1 style="font-size:70px; margin-top: 0px; margin-bottom: 20px;">(.*?)</h1>')->with($hudstf);
                                     if ( $hudstfcheck->find() ) {
                                         $hudstfstatus = "true"; 
@@ -297,10 +300,10 @@ class Welcome extends AbstractForm
                             
                             // Links
                             $this->form('Manager')->ManagerLinksList->items->clear();
-                            if ( $ahudmarray["Links"] ) { 
+                            if ( $ahudmarray["links"] ) { 
                                 $this->form('Manager')->ManagerLinksLabel->visible = true;
                                 $this->form('Manager')->ManagerLinksList->visible = true;                        
-                                $keys = arr::keys($ahudmarray["Links"]);                         
+                                $keys = arr::keys($ahudmarray["links"]);                         
                                 $this->form('Manager')->ManagerLinksList->items->addAll($keys);
                             } else {
                                 $this->form('Manager')->ManagerLinksLabel->visible = false;
@@ -308,11 +311,11 @@ class Welcome extends AbstractForm
                             }
                             
                             // Main source of information about HUD
-                            if ( str::trim($ahudmarray["Main"]["Source"]) != "" ) {
-                                if ( $ahudmarray["Main"]["Source"] == "GitHub" and $githubstatus == "true" ) {
+                            if ( str::trim($ahudmarray["main"]["source"]) != "" ) {
+                                if ( $ahudmarray["main"]["source"] == "github" and $githubstatus == "true" ) {
                                     $hudsource = "GitHub";
                                     // If GitHub and GitHub works stable
-                                } elseif ($ahudmarray["Main"]["Source"] == "HudsTF" and $hudstfstatus == "true" ) {
+                                } elseif ($ahudmarray["main"]["source"] == "hudstf" and $hudstfstatus == "true" ) {
                                     $hudsource = "HudsTF";
                                     // If HudsTF and HudsTF works stable
                                 } else {
@@ -334,7 +337,7 @@ class Welcome extends AbstractForm
                                     
                                 $githubgetdownloadsinfo = function() {
                                     global $ahudmarray, $githubdownloads;
-                                    $githubdownloads = Stream::getContents("https://api.github.com/repos/".$ahudmarray["Main"]["GitHubUser"]."/".$ahudmarray["Main"]["GitHubRepo"]."/"."downloads");
+                                    $githubdownloads = Stream::getContents("https://api.github.com/repos/".$ahudmarray["main"]["githubuser"]."/".$ahudmarray["main"]["githubrepo"]."/"."downloads");
                                     $githubdownloads = Json::decode($githubdownloads);
                                 };    
                                 $githubusedownloadsinfo = function() {
@@ -397,20 +400,20 @@ class Welcome extends AbstractForm
                             
                             // Set-up
                             if ( $hudsource == "GitHub" and $githubstatus == "true" and $hudsource == "GitHub") {
-                                if ( str::trim($ahudmarray["Main"]["HUDName"]) != "" ) {
-                                    $this->form('Manager')->ManagerHUDName->text = $ahudmarray["Main"]["HUDName"];   
+                                if ( str::trim($ahudmarray["main"]["hudname"]) != "" ) {
+                                    $this->form('Manager')->ManagerHUDName->text = $ahudmarray["main"]["hudname"];   
                                 } else {
                                     $this->form('Manager')->ManagerHUDName->text = $github['name'];
                                 }
                                 
-                                if ( str::trim($ahudmarray["Main"]["HUDAuthor"]) != "" ) {
-                                    $this->form('Manager')->ManagerHUDAuthors->text = $ahudmarray["Main"]["HUDAuthor"];    
+                                if ( str::trim($ahudmarray["main"]["hudauthor"]) != "" ) {
+                                    $this->form('Manager')->ManagerHUDAuthors->text = $ahudmarray["main"]["hudauthor"];    
                                 } else {
                                     $this->form('Manager')->ManagerHUDAuthors->text = $github['owner']['login'];
                                 }
                                 
-                                if ( str::trim($ahudmarray["Main"]["HUDDescription"]) != "" ) {
-                                    $this->form('Manager')->ManagerAboutDescription->text = $ahudmarray["Main"]["HUDDescription"];    
+                                if ( str::trim($ahudmarray["main"]["huddescription"]) != "" ) {
+                                    $this->form('Manager')->ManagerAboutDescription->text = $ahudmarray["main"]["huddescription"];    
                                 } else {
                                     $this->form('Manager')->ManagerAboutDescription->text = $github['description'];
                                 }
@@ -420,10 +423,10 @@ class Welcome extends AbstractForm
                                 $this->form('Manager')->ManagerHUDName->x = 96;
                                 $this->form('Manager')->ManagerHUDAuthors->x = 98;
                                 
-                                if ( str::trim($ahudmarray["Main"]["HUDLogo"]) != "" and $checkerstatus['interner'] == true ) {
-                                    $this->form('Manager')->ManagerHUDLogo->image = new UXImage('https://'.$ahudmarray["Main"]["HUDLogo"]);
-                                } elseif ( str::trim($ahudmarray["Main"]["HUDLogoLocal"]) != "" and fs::isFile("$huddir\\".$ahudmarray["Main"]["HUDLogoLocal"])) {
-                                    $this->form('Manager')->ManagerHUDLogo->image = new UXImage($ahudmarray["Main"]["HUDLogoLocal"]);
+                                if ( str::trim($ahudmarray["main"]["hudlogo"]) != "" and $checkerstatus['interner'] == true ) {
+                                    $this->form('Manager')->ManagerHUDLogo->image = new UXImage('https://'.$ahudmarray["main"]["hudlogo"]);
+                                } elseif ( str::trim($ahudmarray["main"]["hudlogolocal"]) != "" and fs::isFile("$huddir\\".$ahudmarray["main"]["hudlogolocal"])) {
+                                    $this->form('Manager')->ManagerHUDLogo->image = new UXImage($ahudmarray["main"]["hudlogolocal"]);
                                 } elseif ( $checkerstatus['github'] == true and $checkerstatus['internet'] == true ) {
                                     $this->form('Manager')->ManagerHUDLogo->image = new UXImage($github["owner"]["avatar_url"]);
                                 } else {
@@ -433,8 +436,8 @@ class Welcome extends AbstractForm
                                     $this->form('Manager')->ManagerHUDAuthors->x = 20;
                                 }   
                             } elseif ( $hudsource == "HudsTF" and $hudstfstatus == "true" or $githuberrors != 0 ) {                          
-                                if ( str::trim($ahudmarray["Main"]["HUDName"]) != "" ) {
-                                    $this->form('Manager')->ManagerHUDName->text = $ahudmarray["Main"]["HUDName"];    
+                                if ( str::trim($ahudmarray["main"]["hudname"]) != "" ) {
+                                    $this->form('Manager')->ManagerHUDName->text = $ahudmarray["main"]["hudname"];    
                                   } else {
                                     $hudstfhudname = Regex::of('<h1 style="font-size:70px; margin-top: 0px; margin-bottom: 20px;">(.*?)</h1>')->with($hudstf);    
                                     if ( $hudstfhudname->find() ) {
@@ -443,8 +446,8 @@ class Welcome extends AbstractForm
                                         $this->form('Manager')->ManagerHUDName->text = "ERROR";   
                                     }
                                 }
-                                if ( str::trim($ahudmarray["Main"]["HUDName"]) != "" ) {
-                                    $this->form('Manager')->ManagerHUDAuthors->text = $ahudmarray["Main"]["HUDName"];    
+                                if ( str::trim($ahudmarray["main"]["hudname"]) != "" ) {
+                                    $this->form('Manager')->ManagerHUDAuthors->text = $ahudmarray["main"]["hudname"];    
                                 } else {
                                     $hudstfhudauthor = Regex::of('<span style=(.*?)<a href="http://huds.tf/forum/member.php?action=profile&amp;uid=(.*?)">(.*?)</a>(.*?)</span>')->with($hudstf);    
                                     if ( $hudstfhudauthor->find() ) {
@@ -455,31 +458,31 @@ class Welcome extends AbstractForm
                                 }
                             } else {
                                 $manualerrors = 0;                   
-                                if ( str::trim($ahudmarray["Main"]["HUDName"]) != "" ) {
-                                    $this->form('Manager')->ManagerHUDName->text = $ahudmarray["Main"]["HUDName"];   
+                                if ( str::trim($ahudmarray["main"]["hudname"]) != "" ) {
+                                    $this->form('Manager')->ManagerHUDName->text = $ahudmarray["main"]["hudname"];   
                                 } else {
                                     $manualerrors++;
                                     $this->form('Manager')->ManagerHUDName->text = "Unknown";
                                 }
                                 
-                                if ( str::trim($ahudmarray["Main"]["HUDAuthor"]) != "" ) {
-                                    $this->form('Manager')->ManagerHUDAuthors->text = $ahudmarray["Main"]["HUDAuthor"];    
+                                if ( str::trim($ahudmarray["main"]["hudauthor"]) != "" ) {
+                                    $this->form('Manager')->ManagerHUDAuthors->text = $ahudmarray["main"]["hudauthor"];    
                                 } else {
                                     $manualerrors++;
                                     $this->form('Manager')->ManagerHUDAuthors->text = "Unknown";
                                 }
                                 
-                                if ( str::trim($ahudmarray["Main"]["HUDDescription"]) != "" ) {
-                                    $this->form('Manager')->ManagerAboutDescription->text = $ahudmarray["Main"]["HUDDescription"];    
+                                if ( str::trim($ahudmarray["main"]["huddescription"]) != "" ) {
+                                    $this->form('Manager')->ManagerAboutDescription->text = $ahudmarray["main"]["huddescription"];    
                                 } else {
                                     $manualerrors++;
                                     $this->form('Manager')->ManagerAboutDescription->text = "Unknown";
                                 }
                                 
-                                if ( str::trim($ahudmarray["Main"]["HUDLogo"]) != "" and $checkerstatus['interner'] == true ) {
-                                    $this->form('Manager')->ManagerHUDLogo->image = new UXImage('https://'.$ahudmarray["Main"]["HUDLogo"]);
-                                } elseif ( str::trim($ahudmarray["Main"]["HUDLogoLocal"]) != "" and fs::isFile("$huddir\\".$ahudmarray["Main"]["HUDLogoLocal"])) {
-                                    $this->form('Manager')->ManagerHUDLogo->image = new UXImage($ahudmarray["Main"]["HUDLogoLocal"]);
+                                if ( str::trim($ahudmarray["main"]["hudlogo"]) != "" and $checkerstatus['interner'] == true ) {
+                                    $this->form('Manager')->ManagerHUDLogo->image = new UXImage('https://'.$ahudmarray["main"]["HUDLogo"]);
+                                } elseif ( str::trim($ahudmarray["main"]["hudlogolocal"]) != "" and fs::isFile("$huddir\\".$ahudmarray["main"]["hudlogolocal"])) {
+                                    $this->form('Manager')->ManagerHUDLogo->image = new UXImage($ahudmarray["main"]["hudlogolocal"]);
                                 } else {
                                     $this->form('Manager')->ManagerHUDLogo->visible = false;
                                     $this->form('Manager')->ManagerHUDLogoBG->visible = false;
@@ -487,7 +490,7 @@ class Welcome extends AbstractForm
                                     $this->form('Manager')->ManagerHUDAuthors->x = 20;
                                 } 
                                 
-                                if ( $ahudmarray["Main"]["GitHubRepo"] and $ahudmarray["Main"]["HudsTFTID"] ) {
+                                if ( $ahudmarray["main"]["githubrepo"] and $ahudmarray["main"]["hudstfid"] ) {
                                     $this->form('Manager')->ManagerUpdateHUDButton->enabled = true; $this->form('Manager')->ManagerUpdateHUDButton->tooltipText = 'Downloade newest version of HUD';
                                     $this->form('Manager')->ManagerCheckforHUDUpdatesButton->enabled = true; $this->form('Manager')->ManagerUpdateHUDButton->tooltipText = 'Check for updates';
                                 } else {
@@ -535,18 +538,13 @@ class Welcome extends AbstractForm
                             */
                             
 
-                            $preupdatecustomizes = function() {
-                                $this->form('Customize')->doDamageIndicatorUpdateButtonClickLeft();
-                                $this->form('Customize')->doKillfeedUpdateButtonClickLeft();
-                                
-                            }; 
-                            $loadingfinished = function() { 
-                                $this->form('Main')->toast("Profile was successfully loaded!", 2000);
-                                $this->form('Main')->MenuManagerButton->enabled = true;
-                                $this->form('Main')->MenuCustomizeButton->enabled = true;
-                                $this->form('Main')->MenuOtherButton->enabled = true;
-                            };
-                            $this->form('Main')->aSync($preupdatecustomizes, $loadingfinished);
+                            $this->form('Customize')->doDamageIndicatorUpdateButtonClickLeft();
+                            $this->form('Customize')->doKillfeedUpdateButtonClickLeft();
+                            $this->form('Main')->toast("Profile was successfully loaded!", 2000);
+                            $this->form('Main')->MenuManagerButton->enabled = true;
+                            $this->form('Main')->MenuCustomizeButton->enabled = true;
+                            $this->form('Main')->MenuOtherButton->enabled = true;
+
                             $this->form('Main')->doMenuManagerButtonClickLeft(); 
                             
                         } else {

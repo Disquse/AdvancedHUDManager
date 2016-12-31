@@ -34,22 +34,17 @@
         <Font name="Verdana" size="16"/>
       </font>
     </FlatButton>
-    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsProfilesTF2DirectoryLabel" layoutX="16" layoutY="280" prefHeight="24" prefWidth="304" styleClass="label " text="TF2 Directory:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+    <LabelEx alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsTF2DirectoryLabel" layoutX="16" layoutY="280" prefHeight="24" prefWidth="304" styleClass="label " text="TF2 Directory:" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
       <font>
         <Font name="Verdana Bold" size="16"/>
       </font>
     </LabelEx>
-    <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="SettingsProfilesTF2Directory" layoutX="16" layoutY="312" prefColumnCount="12" prefHeight="32" prefWidth="272" promptText="" styleClass="text-input text-field " text="">
+    <TextField alignment="CENTER_LEFT" editable="true" focusTraversable="true" id="SettingsTF2Directory" layoutX="16" layoutY="312" prefColumnCount="12" prefHeight="32" prefWidth="312" promptText="" styleClass="text-input text-field " text="">
       <font>
         <Font name="System Regular" size="12"/>
       </font>
     </TextField>
-    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="SettingsProfilesTF2DirectoryBrowse" layoutX="296" layoutY="312" prefHeight="32" prefWidth="32" styleClass="x-flat-button " text="..." textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
-      <font>
-        <Font name="Verdana" size="16"/>
-      </font>
-    </FlatButton>
-    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="SettingsProfilesTF2DirectorySave" layoutX="16" layoutY="352" prefHeight="32" prefWidth="312" styleClass="x-flat-button " text="Save" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
+    <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="SettingsTF2DirectorySave" layoutX="16" layoutY="352" prefHeight="32" prefWidth="312" styleClass="x-flat-button " text="Change" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
       <font>
         <Font name="Verdana" size="16"/>
       </font>
@@ -75,21 +70,20 @@
         <Font name="Verdana" size="16"/>
       </font>
     </FlatButton>
-    <Data cursor="DEFAULT" id="data-SettingsLabel"/>
-    <Data id="data-SettingsProfilesLabel"/>
-    <Data id="data-SettingsProfilesEdit"/>
-    <Data id="data-SettingsProfilesRemove"/>
-    <Data id="data-SettingsProfilesTF2DirectoryLabel"/>
-    <Data id="data-SettingsProfilesTF2DirectoryBrowse"/>
-    <Data id="data-SettingsProfilesTF2DirectorySave"/>
-    <Data cursor="DEFAULT" id="data-SettingsProfilesSetDefault"/>
-    <Data cursor="DEFAULT" id="data-SettingsProfileList"/>
-    <LabelEx alignment="CENTER_RIGHT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsVersionLabel" layoutX="672" layoutY="0" prefHeight="48" prefWidth="192" styleClass="label " text="29.12.16 BETA" textAlignment="RIGHT" textFill="#808080" underline="false" wrapText="false">
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsLabel" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsProfilesLabel" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsProfilesEdit" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsProfilesRemove" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsProfilesTF2DirectoryLabel" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsProfilesTF2DirectorySave" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsProfilesSetDefault" visible="1"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsProfileList" visible="1"/>
+    <LabelEx alignment="CENTER_RIGHT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="SettingsVersionLabel" layoutX="672" layoutY="0" prefHeight="48" prefWidth="192" styleClass="label " text="31.12.16 BETA" textAlignment="RIGHT" textFill="#808080" underline="false" wrapText="false">
       <font>
         <Font name="Verdana" size="12"/>
       </font>
     </LabelEx>
     <Data cursor="DEFAULT" id="data-SettingsVersionLabel"/>
-    <Data cursor="DEFAULT" id="data-SettingsProfilesTF2Directory"/>
+    <Data cursor="DEFAULT" enabled="1" id="data-SettingsProfilesTF2Directory"/>
   </children>
 </AnchorPane>

@@ -1,9 +1,7 @@
 <?php
 namespace app\modules;
-
 use php\util\Regex;
 use php\lib\str;
-
 class VDF
 {	
     private static $STRING = '"',
@@ -64,11 +62,11 @@ class VDF
                 $next_is_value = false;
      
                 $parsed = self::_parse($stream, $i + 1);
-                $deserialized[$laststr] = $parsed[0];
+                $deserialized[strtolower($laststr)] = $parsed[0];
                 $i = $parsed[1];
             }
             else if ($c === self::$NODE_CLOSE) {
-                return [$deserialized, $i];
+                return [array_change_key_case($deserialized), $i];
             }
             else if ($c === self::$BR_OPEN) {
                 $_string = self::_symtostr($stream, $i, self::$BR_CLOSE);
@@ -182,5 +180,4 @@ class VDF
         return $regex->replace($replacement);
     }
 }
-
 ?>

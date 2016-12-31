@@ -47,7 +47,7 @@ class Main extends AbstractForm
      
     function doShowing(UXWindowEvent $event = null)
     {      
-        global $checkerrequired, $gamedir;
+        global $checkerrequired, $gamedir, $gamedirstatus;
         $checkerrequired['github'] = true; $checkerrequired['hudstf'] = true;
         
         // Caching scenes
@@ -81,6 +81,24 @@ class Main extends AbstractForm
             $gamedirstatus = "false";
         }
         
+        $this->AHUDMLogo->opacity = 0; $this->AHUDMLogo->y = -50;
+        Animation::fadeIn($this->AHUDMLogo, 250);
+        Animation::moveTo($this->AHUDMLogo, 250, 0.0, 0.0);
+        
+        $month = Time::now()->month();
+        if ( $month == 12 or $month == 1) {
+            $this->HeaderXmasBackground->visible = true;
+        } else {
+            $this->HeaderXmasBackground->visible = false;
+        }    
+    }
+    
+    /**
+     * @event show 
+     */
+    function doShow(UXWindowEvent $event = null)
+    {    
+        global $gamedir, $gamedirstatus;
         if ( $gamedirstatus == "false" ) {
             waitAsync(750, function () use ($event) {            
                 Animation::moveTo($this->HeaderButtonPanel, 300, 900.0, 10.0);
@@ -96,16 +114,7 @@ class Main extends AbstractForm
                 });                   
            });
         }
-        $this->AHUDMLogo->opacity = 0; $this->AHUDMLogo->y = -50;
-        Animation::fadeIn($this->AHUDMLogo, 250);
-        Animation::moveTo($this->AHUDMLogo, 250, 0.0, 0.0);
         
-        $month = Time::now()->month();
-        if ( $month == 12 or $month == 1) {
-            $this->HeaderXmasBackground->visible = true;
-        } else {
-            $this->HeaderXmasBackground->visible = false;
-        }    
     }
     
     /**
@@ -136,6 +145,7 @@ class Main extends AbstractForm
                 $this->Forms->enabled = true;   
             });
             $this->settings->set('GameDirectory', $gamedir, 'SETTINGS');
+            $this->form('Settings')->SettingsTF2Directory->text = $gamedir;
             $this->toast("Success! Directory was saved.", 2000); 
         } else {  
             $this->toast("Error! Wrong directory.", 2000);  
@@ -343,4 +353,5 @@ class Main extends AbstractForm
             $this->HeaderWarningButton->blinkAnim->enable();
         }
     }
+
 }

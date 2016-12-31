@@ -302,7 +302,7 @@
                         <Font name="Verdana" size="14"/>
                       </font>
                     </FlatButton>
-                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinWidthAdd"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinWidthAdd" visible="1"/>
                     <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMaxWidthAdd" layoutX="200" layoutY="57" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
                         <Font name="Verdana" size="14"/>
@@ -314,14 +314,14 @@
                         <Font name="Verdana" size="14"/>
                       </font>
                     </FlatButton>
-                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorStartRadiusAdd"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorStartRadiusAdd" visible="1"/>
                     <Data cursor="DEFAULT" id="data-DamageIndicatorStartRadius"/>
                     <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorEndRadiusAdd" layoutX="200" layoutY="116" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
                         <Font name="Verdana" size="14"/>
                       </font>
                     </FlatButton>
-                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorEndRadiusAdd"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorEndRadiusAdd" visible="1"/>
                     <Data cursor="DEFAULT" id="data-DamageIndicatorEndRadius"/>
                     <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMaxHeightAdd" layoutX="200" layoutY="178" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
@@ -338,7 +338,7 @@
                         <Font name="Verdana" size="14"/>
                       </font>
                     </FlatButton>
-                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorVisibilityAdd" visible=""/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorVisibilityAdd" visible="1"/>
                     <Data cursor="DEFAULT" id="data-DamageIndicatorMinTime"/>
                     <Data cursor="DEFAULT" id="data-DamageIndicatorMaxTime"/>
                     <CheckBox alignment="CENTER_LEFT" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="DamageIndicatorVisibility" layoutX="212" layoutY="280" prefHeight="24" prefWidth="32" styleClass="check-box " text="" textAlignment="LEFT" textFill="#333333" underline="false" wrapText="false">
@@ -354,16 +354,16 @@
                     <Data id="data-DamageIndicatorVisibility"/>
                     <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorVisibilityLabel" visible="1"/>
                     <Data id="data-DamageIndicatorSettingsLabel"/>
-                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxWidthAdd"/>
-                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxHeightAdd"/>
-                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinTimeAdd"/>
-                    <Data cursor="DEFAULT" id="data-DamageIndicatorMaxTimeAdd" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxWidthAdd" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxHeightAdd" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinTimeAdd" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMaxTimeAdd" visible="1"/>
                     <FlatButton alignment="CENTER" color="#131313" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" hoverColor="#232323" id="DamageIndicatorMinHeightAdd" layoutX="200" layoutY="152" prefHeight="26" prefWidth="40" styleClass="x-flat-button " text="ADD" textAlignment="CENTER" textFill="#ffffff" underline="false" wrapText="false">
                       <font>
                         <Font name="Verdana" size="14"/>
                       </font>
                     </FlatButton>
-                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinHeightAdd"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-DamageIndicatorMinHeightAdd" visible="1"/>
                   </children>
                   <titleFont>
                     <Font name="System Regular" size="12"/>

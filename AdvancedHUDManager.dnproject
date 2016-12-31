@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project author="Disquse" authorOS="Windows 10" createdAt="1465906843883" ideName="DevelNext" ideVersion="16 rc-2" ideVersionHash="2016122612" name="AdvancedHUDManager" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1483039508376">
+<project author="Disquse" authorOS="Windows 10" createdAt="1465906843883" ideName="DevelNext" ideVersion="16 rc-2" ideVersionHash="2016122612" name="AdvancedHUDManager" template="ide\project\templates\DefaultGuiProjectTemplate" updatedAt="1483187894873">
   <openedFiles>
   <file src="~project"/>
     <file src="src/.forms/Main.fxml"/>
     <file src="src/.forms/Welcome.fxml"/>
     <file src="src/.forms/Manager.fxml"/>
-    <file selected="1" src="src/.forms/Customize.fxml"/>
-    <file src="src/.forms/Settings.fxml"/>
+    <file src="src/.forms/Customize.fxml"/>
+    <file selected="1" src="src/.forms/Settings.fxml"/>
     <file src="src/.scripts/Module"/>
     <file src="src/.scripts/Checker"/>
   </openedFiles>

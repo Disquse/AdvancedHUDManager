@@ -69,80 +69,79 @@ class Customize extends AbstractForm
     function doKillfeedUpdateButtonClickLeft(UXMouseEvent $event = null)
     {    
         $this->showPreloader();
-        global $huddir;
-        global $hudlayout;
+        global $huddir, $hudlayout;
         if ( is_file("$huddir\\scripts\\hudlayout.res") and file_get_contents("$huddir\\scripts\\hudlayout.res") != NULL ) {
             $hudlayout = VDF::decodeFile("$huddir\\scripts\\hudlayout.res");
             
-            if ( $hudlayout['Resource/HudLayout.res']['HudDeathNotice'] and ! empty($hudlayout['Resource/HudLayout.res']['HudDeathNotice']) ) {
+            if ( $hudlayout['resource/hudlayout.res']['huddeathnotice'] and ! empty($hudlayout['resource/hudlayout.res']['huddeathnotice']) ) {
                 $this->KillfeedSettingsPanel->visible = true; $this->KillfeedPreviewPanel->visible = true;
                 $this->KillfeedColorsPanel->visible = true; $this->KillfeedApplyButton->visible = true;
                 $this->KillfeedPresetsButton->visible = true; $this->KillfeedNotFoundedAddButton->visible = false;
                 $this->KillfeedNotFoundedDescription->visible = false; $this->KillfeedNotFoundedTitle->visible = false;
-                $killfeed = $hudlayout['Resource/HudLayout.res']['HudDeathNotice'];
+                $killfeed = $hudlayout['resource/hudlayout.res']['huddeathnotice'];
                 
-                if( $killfeed['fieldName'] == 'HudDeathNotice' ) {
-                    if( $killfeed['CornerRadius'] != "" ) {
+                if( strtolower($killfeed['fieldname']) == 'huddeathnotice' ) {
+                    if( $killfeed['cornerradius'] != "" ) {
                         $this->KillfeedCornerRadiusAdd->visible = false;
-                        $this->KillfeedCornerRadius->text = $killfeed['CornerRadius'];
-                        if ( $killfeed['CornerRadius'] > 10 or $killfeed['CornerRadius'] < 0 ) {
+                        $this->KillfeedCornerRadius->text = $killfeed['cornerradius'];
+                        if ( $killfeed['cornerradius'] > 10 or $killfeed['cornerradius'] < 0 ) {
                             $this->KillfeedCornerRadius->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedCornerRadius->style = "{-fx-color:red;}";
+                            $this->KillfeedCornerRadius->classes->add('valuewarning');
                         } else {
-                            $this->KillfeedCornerRadius->tooltipText = "Acceptable value";
-                            $this->KillfeedCornerRadius->style = "{-fx-color:white;}";
+                            $this->KillfeedCornerRadius->classes->remove('valuewarning');
+                            $this->KillfeedCornerRadius->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedCornerRadiusAdd->visible = true;
                     } 
-                    if( $killfeed['LineSpacing'] != "" ) {
+                    if( $killfeed['linespacing'] != "" ) {
                         $this->KillfeedLineSpacingAdd->visible = false;
-                        $this->KillfeedLineSpacing->text = $killfeed['LineSpacing'];
-                        if ( $killfeed['LineSpacing'] > 15 or $killfeed['LineSpacing'] < 0 ) {
+                        $this->KillfeedLineSpacing->text = $killfeed['linespacing'];
+                        if ( $killfeed['linespacing'] > 15 or $killfeed['linespacing'] < 0 ) {
                             $this->KillfeedLineSpacing->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedLineSpacing->style .= "{-fx-color:red;}";
+                            $this->KillfeedLineSpacing->classes->add('valuewarning');
                         } else {
                             $this->KillfeedLineSpacing->tooltipText = "Acceptable value";
-                            $this->KillfeedLineSpacing->style .= "{-fx-color:white;}";
+                            $this->KillfeedLineSpacing->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedLineSpacingAdd->visible = true;
                     }
-                    if( $killfeed['MaxDeathNotices'] != "" ) {
+                    if( $killfeed['maxdeathnotices'] != "" ) {
                         $this->KillfeedMaxDeathNoticesAdd->visible = false;
-                        $this->KillfeedMaxDeathNotices->text = $killfeed['MaxDeathNotices'];
-                        if ( $killfeed['MaxDeathNotices'] > 20 or $killfeed['MaxDeathNotices'] < 4 ) {
+                        $this->KillfeedMaxDeathNotices->text = $killfeed['maxdeathnotices'];
+                        if ( $killfeed['maxdeathnotices'] > 20 or $killfeed['maxdeathnotices'] < 4 ) {
                             $this->KillfeedMaxDeathNotices->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedMaxDeathNotices->style .= "{-fx-color:red;}";
+                            $this->KillfeedMaxDeathNotices->classes->add('valuewarning');
                         } else {
                             $this->KillfeedMaxDeathNotices->tooltipText = "Acceptable value";
-                            $this->KillfeedMaxDeathNotices->style .= "{-fx-color:white;}";
+                            $this->KillfeedMaxDeathNotices->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedMaxDeathNoticesAdd->visible = true;
                     }
-                    if( $killfeed['LineHeight'] != "" ) {
+                    if( $killfeed['lineheight'] != "" ) {
                         $this->KillfeedLineHeightAdd->visible = false;
-                        $this->KillfeedLineHeight->text = $killfeed['LineHeight'];
-                        if ( $killfeed['LineHeight'] > 25 or $killfeed['LineHeight'] < 10 ) {
+                        $this->KillfeedLineHeight->text = $killfeed['lineheight'];
+                        if ( $killfeed['lineheight'] > 25 or $killfeed['lineheight'] < 10 ) {
                             $this->KillfeedLineHeight->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedLineHeight->style .= "{-fx-color:red;}";
+                            $this->KillfeedLineHeight->classes->add('valuewarning');
                         } else {
                             $this->KillfeedLineHeight->tooltipText = "Acceptable value";
-                            $this->KillfeedLineHeight->style .= "{-fx-color:white;}";
+                            $this->KillfeedLineHeight->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedLineHeightAdd->visible = true;
                     }
-                    if( $killfeed['IconScale'] != "" ) {
+                    if( $killfeed['iconscale'] != "" ) {
                         $this->KillfeedIconScaleAdd->visible = false;
-                        $this->KillfeedIconScale->text = $killfeed['IconScale'];
-                        if ( $killfeed['IconScale'] > 0.6 or $killfeed['IconScale'] < 0.1 ) {
+                        $this->KillfeedIconScale->text = $killfeed['iconscale'];
+                        if ( $killfeed['iconscale'] > 0.6 or $killfeed['iconscale'] < 0.1 ) {
                             $this->KillfeedIconScale->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedIconScale->style .= "{-fx-color:red;}";
+                            $this->KillfeedIconScale->classes->add('valuewarning');
                         } else {
                             $this->KillfeedIconScale->tooltipText = "Acceptable value";
-                            $this->KillfeedIconScale->style .= "{-fx-color:white;}";
+                            $this->KillfeedIconScale->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedIconScaleAdd->visible = true;
@@ -152,10 +151,10 @@ class Customize extends AbstractForm
                         $this->KillfeedXPosition->text = $killfeed['xpos'];
                         if ( $killfeed['xpos'] > 3000 or $killfeed['xpos'] < -3000 ) {
                             $this->KillfeedXPosition->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedXPosition->style .= "{-fx-color:red;}";
+                            $this->KillfeedXPosition->classes->add('valuewarning');
                         } else {
                             $this->KillfeedXPosition->tooltipText = "Acceptable value";
-                            $this->KillfeedXPosition->style .= "{-fx-color:white;}";
+                            $this->KillfeedXPosition->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedXPositionAdd->visible = true;
@@ -165,10 +164,10 @@ class Customize extends AbstractForm
                         $this->KillfeedYPosition->text = $killfeed['ypos'];
                         if ( $killfeed['ypos'] > 3000 or $killfeed['ypos'] < -3000 ) {
                             $this->KillfeedYPosition->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedYPosition->style .= "{-fx-color:red;}";
+                            $this->KillfeedYPosition->classes->add('valuewarning');
                         } else {
                             $this->KillfeedYPosition->tooltipText = "Acceptable value";
-                            $this->KillfeedYPosition->style .= "{-fx-color:white;}";
+                            $this->KillfeedYPosition->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedYPositionAdd->visible = true;
@@ -178,10 +177,10 @@ class Customize extends AbstractForm
                         $this->KillfeedLayoutWidth->text = $killfeed['wide'];
                         if ( $killfeed['wide'] > 3000 or $killfeed['wide'] < 0 ) {
                             $this->KillfeedLayoutWidth->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedLayoutWidth->style .= "{-fx-color:red;}";
+                            $this->KillfeedLayoutWidth->classes->add('valuewarning');
                         } else {
                             $this->KillfeedLayoutWidth->tooltipText = "Acceptable value";
-                            $this->KillfeedLayoutWidth->style .= "{-fx-color:white;}";
+                            $this->KillfeedLayoutWidth->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedLayoutWidthAdd->visible = true;
@@ -191,17 +190,17 @@ class Customize extends AbstractForm
                         $this->KillfeedLayoutHeight->text = $killfeed['tall'];
                         if ( $killfeed['tall'] > 3000 or $killfeed['tall'] < 0 ) {
                             $this->KillfeedLayoutHeight->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedLayoutHeight->style .= "{-fx-color:red;}";
+                            $this->KillfeedLayoutHeight->classes->add('valuewarning');
                         } else {
                             $this->KillfeedLayoutHeight->tooltipText = "Acceptable value";
-                            $this->KillfeedLayoutHeight->style .= "{-fx-color:white;}";
+                            $this->KillfeedLayoutHeight->classes->remove('valuewarning');
                         }
                     } else {
                         $this->KillfeedLayoutHeightAdd->visible = true;
                     }
-                    if( $killfeed['RightJustify'] != "" ) {
+                    if( $killfeed['rightjustify'] != "" ) {
                         $this->KillfeedRightAlignAdd->visible = false;
-                        if ( $killfeed['RightJustify'] == "1" ) {
+                        if ( $killfeed['rightjustify'] == "1" ) {
                             $this->KillfeedRightAlign->selected = true;
                         } else {
                             $this->KillfeedRightAlign->selected = false;
@@ -211,7 +210,7 @@ class Customize extends AbstractForm
                     }
                     if( $killfeed['visible'] != "" ) {
                         $this->KillfeedVisibilityAdd->visible = false;
-                        if ( $killfeed['RightJustify'] == "1" ) {
+                        if ( $killfeed['rightjustify'] == "1" ) {
                             $this->KillfeedVisibility->selected = true;
                         } else {
                             $this->KillfeedVisibility->selected = false;
@@ -220,9 +219,9 @@ class Customize extends AbstractForm
                         $this->KillfeedVisibilityAdd->visible = true;
                     }
                     
-                    if( $killfeed['TeamBlue'] != "" ) {
+                    if( $killfeed['teamblue'] != "" ) {
                         $this->KillfeedBluColorAdd->visible = false;
-                        $color = explode(" ", $killfeed['TeamBlue']);
+                        $color = explode(" ", $killfeed['teamblue']);
                         if ( count($color) == 4 ) {
                             if ( $color[0] > 255 or $color[0] < 0 ) {
                                 UXDialog::showAndWait("Error! Invalid color of TeamBlue. Can't read value. But you can replace it.");    
@@ -231,8 +230,8 @@ class Customize extends AbstractForm
                             }
                         } else {
                             $clientscheme = VDF::decodeFile("$huddir\\resource\\clientscheme.res");
-                            if( $clientscheme['Scheme']['Colors'][$killfeed['TeamBlue']] ) {
-                                $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['TeamBlue']]);
+                            if( $clientscheme['scheme']['colors'][$killfeed['teamblue']] ) {
+                                $color = explode(" ", $clientscheme['scheme']['colors'][$killfeed['teamblue']]);
                                 $this->KillfeedBluColor->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
                                 echo("Error! Invalid color of TeamBlue. Can't read value!");       
@@ -241,9 +240,9 @@ class Customize extends AbstractForm
                     } else {
                         $this->KillfeedRedColorAdd->visible = true;
                     }
-                    if( $killfeed['TeamRed'] != "" ) {
+                    if( $killfeed['teamred'] != "" ) {
                         $this->KillfeedRedColorAdd->visible = false;
-                        $color = explode(" ", $killfeed['TeamRed']);
+                        $color = explode(" ", $killfeed['teamred']);
                         if ( count($color) == 4 ) {
                             if ( $color[0] > 255 or $color[0] < 0 ) {
                                 UXDialog::showAndWait("Error! Invalid color of TeamRed. Can't read value. But you can replace it.");    
@@ -252,8 +251,8 @@ class Customize extends AbstractForm
                             }
                         } else {
                             $clientscheme = VDF::decodeFile("$huddir\\resource\\clientscheme.res");
-                            if( $clientscheme['Scheme']['Colors'][$killfeed['TeamRed']] ) {
-                                $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['TeamRed']]);
+                            if( $clientscheme['scheme']['colors'][$killfeed['teamred']] ) {
+                                $color = explode(" ", $clientscheme['scheme']['colors'][$killfeed['teamred']]);
                                 $this->KillfeedRedColor->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
                                 echo("Error! Invalid color of TeamRed. Can't read value!");       
@@ -262,9 +261,9 @@ class Customize extends AbstractForm
                     } else {
                         $this->KillfeedRedColorAdd->visible = true;
                     }
-                    if( $killfeed['IconColor'] != "" ) {
+                    if( $killfeed['iconcolor'] != "" ) {
                         $this->KillfeedIconColorAdd->visible = false;
-                        $color = explode(" ", $killfeed['IconColor']);
+                        $color = explode(" ", $killfeed['iconcolor']);
                         if ( count($color) == 4 ) {
                             if ( $color[0] > 255 or $color[0] < 0 ) {
                                 UXDialog::showAndWait("Error! Invalid color of IconColor. Can't read value. But you can replace it.");    
@@ -272,8 +271,8 @@ class Customize extends AbstractForm
                                 $this->KillfeedIconColor->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());                            }
                         } else {
                             $clientscheme = VDF::decodeFile("$huddir\\resource\\clientscheme.res");
-                            if( $clientscheme['Scheme']['Colors'][$killfeed['IconColor']] ) {
-                                $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['IconColor']]);
+                            if( $clientscheme['scheme']['colors'][$killfeed['iconcolor']] ) {
+                                $color = explode(" ", $clientscheme['scheme']['colors'][$killfeed['iconcolor']]);
                                 $this->KillfeedIconColor->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
                                 echo("Error! Invalid color of IconColor. Can't read value!");       
@@ -282,9 +281,9 @@ class Customize extends AbstractForm
                     } else {
                         $this->KillfeedIconColorAdd->visible = true;
                     }                   
-                    if( $killfeed['BaseBackgroundColor'] != "" ) {
+                    if( $killfeed['basebackgroundcolor'] != "" ) {
                         $this->KillfeedPanelBackgroundAdd->visible = false;
-                        $color = explode(" ", $killfeed['BaseBackgroundColor']);
+                        $color = explode(" ", $killfeed['basebackgroundcolor']);
                         if ( count($color) == 4 ) {
                             if ( $color[0] > 255 or $color[0] < 0 ) {
                                 UXDialog::showAndWait("Error! Invalid color of BaseBackgroundColor. Can't read value. But you can replace it.");    
@@ -293,8 +292,8 @@ class Customize extends AbstractForm
                             }
                         } else {
                             $clientscheme = VDF::decodeFile("$huddir\\resource\\clientscheme.res");
-                            if( $clientscheme['Scheme']['Colors'][$killfeed['BaseBackgroundColor']] ) {
-                                $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['BaseBackgroundColor']]);
+                            if( $clientscheme['scheme']['colors'][$killfeed['basebackgroundcolor']] ) {
+                                $color = explode(" ", $clientscheme['scheme']['colors'][$killfeed['basebackgroundcolor']]);
                                 $this->KillfeedPanelBackground->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
                                 echo("Error! Invalid color of BaseBackgroundColor. Can't read value!");       
@@ -303,9 +302,9 @@ class Customize extends AbstractForm
                     } else {
                         $this->KillfeedPanelBackgroundAdd->visible = true;
                     }  
-                    if( $killfeed['LocalPlayerColor'] != "" ) {
+                    if( $killfeed['localplayercolor'] != "" ) {
                         $this->KillfeedPanelLocalPlayerAdd->visible = false;
-                        $color = explode(" ", $killfeed['LocalPlayerColor']);
+                        $color = explode(" ", $killfeed['localplayercolor']);
                         if ( count($color) == 4 ) {
                             if ( $color[0] > 255 or $color[0] < 0 ) {
                                 UXDialog::showAndWait("Error! Invalid color of LocalPlayerColor. Can't read value. But you can replace it.");    
@@ -314,8 +313,8 @@ class Customize extends AbstractForm
                             }
                         } else {
                             $clientscheme = VDF::decodeFile("$huddir\\resource\\clientscheme.res");
-                            if( $clientscheme['Scheme']['Colors'][$killfeed['LocalPlayerColor']] ) {
-                                $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['LocalPlayerColor']]);
+                            if( $clientscheme['scheme']['colors'][$killfeed['localplayercolor']] ) {
+                                $color = explode(" ", $clientscheme['scheme']['colors'][$killfeed['localplayercolor']]);
                                 $this->KillfeedPanelLocalPlayer->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
                                 echo("Error! Invalid color of LocalPlayerColor. Can't read value!");       
@@ -324,9 +323,9 @@ class Customize extends AbstractForm
                     } else {
                         $this->KillfeedPanelLocalPlayerAdd->visible = true;
                     } 
-                    if( $killfeed['LocalBackgroundColor'] != "" ) {
+                    if( $killfeed['localbackgroundcolor'] != "" ) {
                         $this->KillfeedLocalBackgroundAdd->visible = false;
-                        $color = explode(" ", $killfeed['LocalBackgroundColor']);
+                        $color = explode(" ", $killfeed['localbackgroundcolor']);
                         if ( count($color) == 4 ) {
                             if ( $color[0] > 255 or $color[0] < 0 ) {
                                 UXDialog::showAndWait("Error! Invalid color of LocalBackgroundColor. Can't read value. But you can replace it.");    
@@ -335,8 +334,8 @@ class Customize extends AbstractForm
                             }
                         } else {
                             $clientscheme = VDF::decodeFile("$huddir\\resource\\clientscheme.res");
-                            if( $clientscheme['Scheme']['Colors'][$killfeed['LocalBackgroundColor']] ) {
-                                $color = explode(" ", $clientscheme['Scheme']['Colors'][$killfeed['LocalBackgroundColor']]);
+                            if( $clientscheme['scheme']['colors'][$killfeed['localbackgroundcolor']] ) {
+                                $color = explode(" ", $clientscheme['scheme']['colors'][$killfeed['localbackgroundcolor']]);
                                 $this->KillfeedLocalBackground->value = UXColor::of(UXColor::rgb($color[0], $color[1], $color[2], round($color[3]/255, 1) )->getWebValue());
                             } else {
                                 echo("Error! Invalid color of LocalBackground. Can't read value!");    
@@ -369,46 +368,46 @@ class Customize extends AbstractForm
     {    
         $this->showPreloader();
         global $hudlayout; global $huddir;
-        if ( $hudlayout['Resource/HudLayout.res']['HudDeathNotice'] ) {
+        if ( $hudlayout['resource/hudlayout.res']['huddeathnotice'] ) {
             if ( $this->KillfeedCornerRadiusAdd->visible != true or trim($this->KillfeedCornerRadius->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['CornerRadius'] = $this->KillfeedCornerRadius->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['cornerradius'] = $this->KillfeedCornerRadius->text;
             }
             if ( $this->KillfeedLineSpacingAdd->visible != true or trim($this->KillfeedLineSpacing->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['LineSpacing'] = $this->KillfeedLineSpacing->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['linespacing'] = $this->KillfeedLineSpacing->text;
             }
             if ( $this->KillfeedMaxDeathNoticesAdd->visible != true or trim($this->KillfeedMaxDeathNotices->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['MaxDeathNotices'] = $this->KillfeedMaxDeathNotices->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['maxdeathnotices'] = $this->KillfeedMaxDeathNotices->text;
             }
             if ( $this->KillfeedLineHeightAdd->visible != true or trim($this->KillfeedLineHeight->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['LineHeight'] = $this->KillfeedLineHeight->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['lineheight'] = $this->KillfeedLineHeight->text;
             }
             if ( $this->KillfeedIconScaleAdd->visible != true or trim($this->KillfeedIconScale->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['IconScale'] = $this->KillfeedIconScale->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['iconscale'] = $this->KillfeedIconScale->text;
             }
             if ( $this->KillfeedXPositionAdd->visible != true or trim($this->KillfeedXPosition->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['xpos'] = $this->KillfeedXPosition->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['xpos'] = $this->KillfeedXPosition->text;
             }
             if ( $this->KillfeedYPositionAdd->visible != true or trim($this->KillfeedYPosition->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['ypos'] = $this->KillfeedYPosition->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['ypos'] = $this->KillfeedYPosition->text;
             }
             if ( $this->KillfeedLayoutWidthAdd->visible != true or trim($this->KillfeedLayoutWidth->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['wide'] = $this->KillfeedLayoutWidth->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['wide'] = $this->KillfeedLayoutWidth->text;
             }
             if ( $this->KillfeedLayoutHeightAdd->visible != true or trim($this->KillfeedLayoutHeight->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['tall'] = $this->KillfeedLayoutHeight->text;
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['tall'] = $this->KillfeedLayoutHeight->text;
             }
             if ( $this->KillfeedRightAlignAdd->visible != true ) {
                 if ( $this->KillfeedRightAlign->selected == true ) {
-                    $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['RightJustify'] = "1";
+                    $hudlayout['resource/hudlayout.res']['huddeathnotice']['rightjustify'] = "1";
                 } else {
-                    $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['RightJustify'] = "0";    
+                    $hudlayout['resource/hudlayout.res']['huddeathnotice']['rightjustify'] = "0";    
                 }
             }
             if ( $this->KillfeedVisibilityAdd->visible != true ) {
                 if ( $this->KillfeedVisibility->selected == true ) {
-                    $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['visible'] = "1";
+                    $hudlayout['resource/hudlayout.res']['huddeathnotice']['visible'] = "1";
                 } else {
-                    $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['visible'] = "0";    
+                    $hudlayout['resource/hudlayout.res']['huddeathnotice']['visible'] = "0";    
                 }
             }
             if ( $this->KillfeedBluColorAdd->visible != true ) {
@@ -416,44 +415,45 @@ class Customize extends AbstractForm
                 $g = round(255 * UXColor::of($this->KillfeedBluColor->value)->green);
                 $b = round(255 * UXColor::of($this->KillfeedBluColor->value)->blue);
                 $o = round(255 * UXColor::of($this->KillfeedBluColor->value)->opacity);
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['TeamBlue'] = "$r $g $b $o";
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['teamblue'] = "$r $g $b $o";
             }
             if ( $this->KillfeedRedColorAdd->visible != true ) {
                 $r = round(255 * UXColor::of($this->KillfeedRedColor->value)->red);
                 $g = round(255 * UXColor::of($this->KillfeedRedColor->value)->green);
                 $b = round(255 * UXColor::of($this->KillfeedRedColor->value)->blue);
                 $o = round(255 * UXColor::of($this->KillfeedRedColor->value)->opacity);
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['TeamRed'] = "$r $g $b $o";
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['teamred'] = "$r $g $b $o";
             }
             if ( $this->KillfeedIconColorAdd->visible != true ) {
                 $r = round(255 * UXColor::of($this->KillfeedIconColor->value)->red);
                 $g = round(255 * UXColor::of($this->KillfeedIconColor->value)->green);
                 $b = round(255 * UXColor::of($this->KillfeedIconColor->value)->blue);
                 $o = round(255 * UXColor::of($this->KillfeedIconColor->value)->opacity);
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['IconColor'] = "$r $g $b $o";
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['iconcolor'] = "$r $g $b $o";
             }
             if ( $this->KillfeedPanelBackgroundAdd->visible != true ) {
                 $r = round(255 * UXColor::of($this->KillfeedPanelBackground->value)->red);
                 $g = round(255 * UXColor::of($this->KillfeedPanelBackground->value)->green);
                 $b = round(255 * UXColor::of($this->KillfeedPanelBackground->value)->blue);
                 $o = round(255 * UXColor::of($this->KillfeedPanelBackground->value)->opacity);
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['BaseBackgroundColor'] = "$r $g $b $o";
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['basebackgroundcolor'] = "$r $g $b $o";
             }
             if ( $this->KillfeedPanelLocalPlayerAdd->visible != true ) {
                 $r = round(255 * UXColor::of($this->KillfeedPanelLocalPlayer->value)->red);
                 $g = round(255 * UXColor::of($this->KillfeedPanelLocalPlayer->value)->green);
                 $b = round(255 * UXColor::of($this->KillfeedPanelLocalPlayer->value)->blue);
                 $o = round(255 * UXColor::of($this->KillfeedPanelLocalPlayer->value)->opacity);
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['LocalPlayerColor'] = "$r $g $b $o";
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['localplayercolor'] = "$r $g $b $o";
             }
             if ( $this->KillfeedLocalBackgroundAdd->visible != true ) {
                 $r = round(255 * UXColor::of($this->KillfeedLocalBackground->value)->red);
                 $g = round(255 * UXColor::of($this->KillfeedLocalBackground->value)->green);
                 $b = round(255 * UXColor::of($this->KillfeedLocalBackground->value)->blue);
                 $o = round(255 * UXColor::of($this->KillfeedLocalBackground->value)->opacity);
-                $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['LocalBackgroundColor'] = "$r $g $b $o";
+                $hudlayout['resource/hudlayout.res']['huddeathnotice']['localbackgroundcolor'] = "$r $g $b $o";
             }
             VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout);  
+            $this->doKillfeedUpdateButtonClickLeft();
         } else {
             pre("Error! Can't read hudlayouts. It's can be broken.");  
         }
@@ -465,7 +465,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedCornerRadiusAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['CornerRadius'] = "3";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['cornerradius'] = "3";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout);
     }
 
@@ -474,7 +474,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedLineSpacingAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['LineSpacing'] = "4";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['linespacing'] = "4";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout);
     }
 
@@ -483,7 +483,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedMaxDeathNoticesAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['MaxDeathNotices'] = "4";  
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['maxdeathnotices'] = "4";  
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -492,7 +492,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedLineHeightAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['LineHeight'] = "16";  
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['lineheight'] = "16";  
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -501,7 +501,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedIconScaleAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['IconScale'] = "0.35";  
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['iconscale'] = "0.35";  
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -510,7 +510,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedXPositionAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['xpos'] = "r640";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['xpos'] = "r640";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -519,7 +519,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedYPositionAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['ypos'] = "18";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['ypos'] = "18";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -528,7 +528,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedLayoutWidthAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['wide'] = "580";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['wide'] = "580";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -537,7 +537,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedLayoutHeightAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['tall'] = "468";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['tall'] = "468";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -546,7 +546,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedRightAlignAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['RightJustify'] = "1";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['rightjustify'] = "1";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -555,7 +555,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedVisibilityAddMouseDownLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['Visible'] = "1";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['visible'] = "1";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -564,7 +564,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedBluColorAddMouseDownLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['TeamBlue'] = "0 135 255 255";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['teamblue'] = "0 135 255 255";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -574,7 +574,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedIconColorAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['IconColor'] = "119 119 119 90";      
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['iconcolor'] = "119 119 119 90";      
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -583,7 +583,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedPanelBackgroundAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['BaseBackgroundColor'] = "46 43 42 220";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['basebackgroundcolor'] = "46 43 42 220";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -592,7 +592,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedPanelLocalPlayerAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['LocalPlayerColor'] = "119 119 119 90";         
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['localplayercolor'] = "119 119 119 90";         
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -601,7 +601,7 @@ class Customize extends AbstractForm
      */
     function doKillfeedLocalBackgroundAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDeathNotice']['LocalBackgroundColor'] = "245 229 196 200";
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddeathnotice']['localbackgroundcolor'] = "245 229 196 200";
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -612,26 +612,26 @@ class Customize extends AbstractForm
     {    
         $hudlayout = VDF::decodeFile("$huddir\\scripts\\hudlayout.res");
         $killfeed = [
-            'fieldName' => "HudDeathNotice",
+            'fieldname' => "huddeathnotice",
             'xpos' => "r640",
             'ypos' => "18",
             'wide' => "580",
             'tall' => "428",                                     
             'visible' => "1",
             'enabled' => "1",
-            'CornerRadius' => "3",
-            'LineSpacing' => "4",
-            'MaxDeathNotices' => "4", 
-            'LineHeight' => "16",
-            'IconScale' => "0.35",
-            'TeamBlue' => "0 135 255 255",
+            'cornerradius' => "3",
+            'linespacing' => "4",
+            'maxdeathnotices' => "4", 
+            'lineheight' => "16",
+            'iconscale' => "0.35",
+            'teamblue' => "0 135 255 255",
             'TeamRed' => "153 0 0 255",
             'IconColor' => "119 119 119 90",
-            'BaseBackgroundColor' => "46 43 42 220",
-            'LocalPlayerColor' => "119 119 119 90",  
-            'LocalBackgroundColor' => "245 229 196 200",
+            'basebackgroundcolor' => "46 43 42 220",
+            'localplayercolor' => "119 119 119 90",  
+            'localbackgroundcolor' => "245 229 196 200",
         ];
-        $hudlayout['Resource/HudLayout.res']['HudDeathNotice'] = $killfeed;
+        $hudlayout['resource/hudlayout.res']['huddeathnotice'] = $killfeed;
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -783,91 +783,91 @@ class Customize extends AbstractForm
                 $this->KillfeedCornerRadius->text = $presets[$selectedindex]['Preset']['CornerRadius'];
                 if ( $presets[$selectedindex]['Preset']['CornerRadius'] > 10 or $presets[$selectedindex]['Preset']['CornerRadius'] < 0 ) {
                     $this->KillfeedCornerRadius->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedCornerRadius->style = "{-fx-color:red;}";
+                    $this->KillfeedCornerRadius->classes->add('valuewarning');
                 } else {
                     $this->KillfeedCornerRadius->tooltipText = "Acceptable value";
-                    $this->KillfeedCornerRadius->style = "{-fx-color:white;}";
+                    $this->KillfeedCornerRadius->classes->remove('value-warning');
                 }
 
                 $this->KillfeedLineSpacing->text = $presets[$selectedindex]['Preset']['LineSpacing'];
                 if ( $presets[$selectedindex]['Preset']['LineSpacing'] > 15 or $presets[$selectedindex]['Preset']['LineSpacing'] < 0 ) {
                     $this->KillfeedLineSpacing->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedLineSpacing->style .= "{-fx-color:red;}";
+                    $this->KillfeedLineSpacing->classes->add('valuewarning');
                 } else {
                     $this->KillfeedLineSpacing->tooltipText = "Acceptable value";
-                    $this->KillfeedLineSpacing->style .= "{-fx-color:white;}";
+                    $this->KillfeedLineSpacing->classes->remove('valuewarning');
                 }
 
                 $this->KillfeedMaxDeathNotices->text = $presets[$selectedindex]['Preset']['MaxDeathNotices'];
                 if ( $presets[$selectedindex]['Preset']['MaxDeathNotices'] > 20 or $presets[$selectedindex]['Preset']['MaxDeathNotices'] < 4 ) {
                     $this->KillfeedMaxDeathNotices->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedMaxDeathNotices->style .= "{-fx-color:red;}";
+                    $this->KillfeedMaxDeathNotices->classes->add('valuewarning');
                 } else {
                     $this->KillfeedMaxDeathNotices->tooltipText = "Acceptable value";
-                    $this->KillfeedMaxDeathNotices->style .= "{-fx-color:white;}";
+                    $this->KillfeedMaxDeathNotices->classes->remove('valuewarning');
                 }
                 
                 $this->KillfeedLineHeight->text = $presets[$selectedindex]['Preset']['LineHeight'];
                 if ( $presets[$selectedindex]['Preset']['LineHeight'] > 25 or $presets[$selectedindex]['Preset']['LineHeight'] < 10 ) {
                     $this->KillfeedLineHeight->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedLineHeight->style .= "{-fx-color:red;}";
+                    $this->KillfeedLineHeight->classes->add('valuewarning');
                 } else {
                     $this->KillfeedLineHeight->tooltipText = "Acceptable value";
-                    $this->KillfeedLineHeight->style .= "{-fx-color:white;}";
+                    $this->KillfeedLineHeight->classes->remove('valuewarning');
                 }
 
                 $this->KillfeedIconScale->text = $presets[$selectedindex]['Preset']['IconScale'];
                 if ( $presets[$selectedindex]['Preset']['IconScale'] > 0.6 or $presets[$selectedindex]['Preset']['IconScale'] < 0.1 ) {
                     $this->KillfeedIconScale->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedIconScale->style .= "{-fx-color:red;}";
+                    $this->KillfeedIconScale->classes->add('valuewarning');
                 } else {
                     $this->KillfeedIconScale->tooltipText = "Acceptable value";
-                    $this->KillfeedIconScale->style .= "{-fx-color:white;}";
+                    $this->KillfeedIconScale->classes->remove('valuewarning');
                 }
 
                 $this->KillfeedXPosition->text = $presets[$selectedindex]['Preset']['xpos'];
                 if ( $presets[$selectedindex]['Preset']['xpos'] > 3000 or $presets[$selectedindex]['Preset']['xpos'] < -3000 ) {
                     $this->KillfeedXPosition->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedXPosition->style .= "{-fx-color:red;}";
+                    $this->KillfeedXPosition->classes->add('valuewarning');
                 } else {
                     $this->KillfeedXPosition->tooltipText = "Acceptable value";
-                    $this->KillfeedXPosition->style .= "{-fx-color:white;}";
+                    $this->KillfeedXPosition->classes->remove('valuewarning');
                 }
 
                 $this->KillfeedYPosition->text = $presets[$selectedindex]['Preset']['ypos'];
                 if ( $presets[$selectedindex]['Preset']['ypos'] > 3000 or $presets[$selectedindex]['Preset']['ypos'] < -3000 ) {
                     $this->KillfeedYPosition->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedYPosition->style .= "{-fx-color:red;}";
+                    $this->KillfeedYPosition->classes->add('valuewarning');
                 } else {
                     $this->KillfeedYPosition->tooltipText = "Acceptable value";
-                    $this->KillfeedYPosition->style .= "{-fx-color:white;}";
+                    $this->KillfeedYPosition->classes->remove('valuewarning');
                 }
 
                 $this->KillfeedLayoutWidth->text = $presets[$selectedindex]['Preset']['wide'];
                 if ( $presets[$selectedindex]['Preset']['wide'] > 3000 or $presets[$selectedindex]['Preset']['wide'] < 0 ) {
                     $this->KillfeedLayoutWidth->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedLayoutWidth->style .= "{-fx-color:red;}";
+                    $this->KillfeedLayoutWidth->classes->add('valuewarning');
                 } else {
                     $this->KillfeedLayoutWidth->tooltipText = "Acceptable value";
-                    $this->KillfeedLayoutWidth->style .= "{-fx-color:white;}";
+                    $this->KillfeedLayoutWidth->classes->remove('valuewarning');
                 }
 
                 $this->KillfeedLayoutHeight->text = $presets[$selectedindex]['Preset']['tall'];
                 if ( $presets[$selectedindex]['Preset']['tall'] > 3000 or $presets[$selectedindex]['Preset']['tall'] < 0 ) {
                     $this->KillfeedLayoutHeight->tooltipText = "Unrecommended value. Element might display not correct!";
-                    $this->KillfeedLayoutHeight->style .= "{-fx-color:red;}";
+                    $this->KillfeedLayoutHeight->classes->add('valuewarning');
                 } else {
                     $this->KillfeedLayoutHeight->tooltipText = "Acceptable value";
-                    $this->KillfeedLayoutHeight->style .= "{-fx-color:white;}";
+                    $this->KillfeedLayoutHeight->classes->remove('valuewarning');
                 }
 
-                if ( $presets[$selectedindex]['Preset']['RightJustify'] == "1" ) {
+                if ( $presets[$selectedindex]['Preset']['rightjustify'] == "1" ) {
                     $this->KillfeedRightAlign->selected = true;
                 } else {
                     $this->KillfeedRightAlign->selected = false;
                 }
 
-                if ( $presets[$selectedindex]['Preset']['RightJustify'] == "1" ) {
+                if ( $presets[$selectedindex]['Preset']['rightjustify'] == "1" ) {
                     $this->KillfeedVisibility->selected = true;
                 } else {
                     $this->KillfeedVisibility->selected = false;
@@ -1005,118 +1005,119 @@ class Customize extends AbstractForm
     function doDamageIndicatorUpdateButtonClickLeft(UXMouseEvent $event = null)
     {    
         $this->showPreloader();
-        global $huddir;
-        global $hudlayout;
+        global $huddir; 
+        
         if ( is_file("$huddir\\scripts\\hudlayout.res") and file_get_contents("$huddir\\scripts\\hudlayout.res") != NULL ) {
             $hudlayout = VDF::decodeFile("$huddir\\scripts\\hudlayout.res");
-            if ( $hudlayout['Resource/HudLayout.res']['HudDamageIndicator'] and ! empty($hudlayout['Resource/HudLayout.res']['HudDamageIndicator']) ) {
+            
+            if ( $hudlayout['resource/hudlayout.res']['huddamageindicator'] and ! empty($hudlayout['resource/hudlayout.res']['huddamageindicator']) ) {
                 $this->DamageIndicatorSettingsPanel->visible = true; $this->DamageIndicatorPreviewPanel->visible = true;
                 $this->DamageIndicatorApplyButton->visible = true;
                 $this->DamageIndicatorPresetsButton->visible = true; $this->DamageIndicatorNotFoundedAddButton->visible = false;
                 $this->DamageIndicatorNotFoundedDescription->visible = false; $this->DamageIndicatorNotFoundedTitle->visible = false;
-                $damageindicator = $hudlayout['Resource/HudLayout.res']['HudDamageIndicator'];
+                $damageindicator = $hudlayout['resource/hudlayout.res']['huddamageindicator'];
                 
-                if( $damageindicator['fieldName'] == 'HudDamageIndicator' ) {
-                    if( $damageindicator['MinimumWidth'] != "" ) {
+                if( strtolower($damageindicator['fieldname']) == 'huddamageindicator' ) {
+                    if( $damageindicator['minimumwidth'] != "" ) {
                         $this->DamageIndicatorMinWidthAdd->visible = false;
-                        $this->DamageIndicatorMinWidth->text = $damageindicator['MinimumWidth'];
-                        if ( $damageindicator['MinimumWidth'] > 35 or $damageindicator['MinimumWidth'] < 0 ) {
+                        $this->DamageIndicatorMinWidth->text = $damageindicator['minimumwidth'];
+                        if ( $damageindicator['minimumwidth'] > 35 or $damageindicator['minimumwidth'] < 0 ) {
                             $this->DamageIndicatorMinWidth->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->KillfeedCornerRadius->style = "{-fx-color:red;}";
+                            $this->Killfeedcornerradius->classes->add('valuewarning');
                         } else {
                             $this->DamageIndicatorMinWidth->tooltipText = "Acceptable value";
-                            $this->DamageIndicatorMinWidth->style = "{-fx-color:white;}";
+                            $this->DamageIndicatorMinWidth->classes->remove('valuewarning');
                         }
                     } else {
                         $this->DamageIndicatorMinWidthAdd->visible = true;
                     }
-                    if( $damageindicator['MaximumWidth'] != "" ) {
+                    if( $damageindicator['maximumwidth'] != "" ) {
                         $this->DamageIndicatorMaxWidthAdd->visible = false;
-                        $this->DamageIndicatorMaxWidth->text = $damageindicator['MaximumWidth'];
-                        if ( $damageindicator['MaximumWidth'] > 35 or $damageindicator['MaximumWidth'] < 0 ) {
+                        $this->DamageIndicatorMaxWidth->text = $damageindicator['maximumwidth'];
+                        if ( $damageindicator['maximumwidth'] > 35 or $damageindicator['maximumwidth'] < 0 ) {
                             $this->DamageIndicatorMaxWidth->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->DamageIndicatorMaxWidth->style = "{-fx-color:red;}";
+                            $this->DamageIndicatorMaxWidth->classes->add('valuewarning');
                         } else {
                             $this->DamageIndicatorMaxWidth->tooltipText = "Acceptable value";
-                            $this->DamageIndicatorMaxWidth->style = "{-fx-color:white;}";
+                            $this->DamageIndicatorMaxWidth->classes->remove('valuewarning');
                         }
                     } else {
                         $this->DamageIndicatorMaxWidthAdd->visible = true;
                     }
-                    if( $damageindicator['StartRadius'] != "" ) {
+                    if( $damageindicator['startradius'] != "" ) {
                         $this->DamageIndicatorStartRadiusAdd->visible = false;
-                        $this->DamageIndicatorStartRadius->text = $damageindicator['StartRadius'];
-                        if ( $damageindicator['StartRadius'] > 200 or $damageindicator['StartRadius'] < 50 ) {
+                        $this->DamageIndicatorStartRadius->text = $damageindicator['startradius'];
+                        if ( $damageindicator['startradius'] > 200 or $damageindicator['startradius'] < 50 ) {
                             $this->DamageIndicatorStartRadius->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->DamageIndicatorStartRadius->style = "{-fx-color:red;}";
+                            $this->DamageIndicatorStartRadius->classes->add('valuewarning');
                         } else {
                             $this->DamageIndicatorStartRadius->tooltipText = "Acceptable value";
-                            $this->DamageIndicatorStartRadius->style = "{-fx-color:white;}";
+                            $this->DamageIndicatorStartRadius->classes->remove('valuewarning');
                         }
                     } else {
                         $this->DamageIndicatorStartRadiusAdd->visible = true;
                     }
-                    if( $damageindicator['EndRadius'] != "" ) {
+                    if( $damageindicator['endradius'] != "" ) {
                         $this->DamageIndicatorEndRadiusAdd->visible = false;
-                        $this->DamageIndicatorEndRadius->text = $damageindicator['EndRadius'];
-                        if ( $damageindicator['EndRadius'] > 35 or $damageindicator['EndRadius'] < 0 ) {
+                        $this->DamageIndicatorEndRadius->text = $damageindicator['endradius'];
+                        if ( $damageindicator['endradius'] > 35 or $damageindicator['endradius'] < 0 ) {
                             $this->DamageIndicatorEndRadius->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->DamageIndicatorEndRadius->style = "{-fx-color:red;}";
+                            $this->DamageIndicatorEndRadius->classes->add('valuewarning');
                         } else {
                             $this->DamageIndicatorEndRadius->tooltipText = "Acceptable value";
-                            $this->DamageIndicatorEndRadius->style = "{-fx-color:white;}";
+                            $this->DamageIndicatorEndRadius->classes->remove('valuewarning');
                         }
                     } else {
                         $this->DamageIndicatorEndRadiusAdd->visible = true;
                     }
-                    if( $damageindicator['MinimumHeight'] != "" ) {
+                    if( $damageindicator['minimumheight'] != "" ) {
                         $this->DamageIndicatorMinHeightAdd->visible = false;
-                        $this->DamageIndicatorMinHeight->text = $damageindicator['MinimumHeight'];
-                        if ( $damageindicator['MinimumHeight'] > 10 or $damageindicator['MinimumHeight'] < 60 ) {
+                        $this->DamageIndicatorMinHeight->text = $damageindicator['minimumheight'];
+                        if ( $damageindicator['minimumheight'] > 10 or $damageindicator['minimumheight'] < 60 ) {
                             $this->DamageIndicatorMinHeight->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->DamageIndicatorMinHeight->style = "{-fx-color:red;}";
+                            $this->DamageIndicatorMinHeight->classes->add('valuewarning');
                         } else {
                             $this->DamageIndicatorMinHeight->tooltipText = "Acceptable value";
-                            $this->DamageIndicatorMinHeight->style = "{-fx-color:white;}";
+                            $this->DamageIndicatorMinHeight->classes->remove('valuewarning');
                         }
                     } else {
                         $this->DamageIndicatorMinHeightAdd->visible = true;
                     }
-                    if( $damageindicator['MaximumHeight'] != "" ) {
+                    if( $damageindicator['maximumheight'] != "" ) {
                         $this->DamageIndicatorMaxHeightAdd->visible = false;
-                        $this->DamageIndicatorMaxHeight->text = $damageindicator['MaximumHeight'];
-                        if ( $damageindicator['MaximumHeight'] > 35 or $damageindicator['MaximumHeight'] < 120 ) {
+                        $this->DamageIndicatorMaxHeight->text = $damageindicator['maximumheight'];
+                        if ( $damageindicator['maximumheight'] > 35 or $damageindicator['maximumheight'] < 120 ) {
                             $this->DamageIndicatorMaxHeight->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->DamageIndicatorMaxHeight->style = "{-fx-color:red;}";
+                            $this->DamageIndicatorMaxHeight->classes->add('valuewarning');
                         } else {
                             $this->DamageIndicatorMaxHeight->tooltipText = "Acceptable value";
-                            $this->DamageIndicatorMaxHeight->style = "{-fx-color:white;}";
+                            $this->DamageIndicatorMaxHeight->classes->remove('valuewarning');
                         }
                     } else {
                         $this->DamageIndicatorMaxHeightAdd->visible = true;
                     }
-                    if( $damageindicator['MinimumTime'] != "" ) {
+                    if( $damageindicator['minimumtime'] != "" ) {
                         $this->DamageIndicatorMinTimeAdd->visible = false;
-                        $this->DamageIndicatorMinTime->text = $damageindicator['MinimumTime'];
-                        if ( $damageindicator['MinimumTime'] > 35 or $damageindicator['MinimumTime'] < 120 ) {
+                        $this->DamageIndicatorMinTime->text = $damageindicator['minimumtime'];
+                        if ( $damageindicator['minimumtime'] > 35 or $damageindicator['minimumtime'] < 120 ) {
                             $this->DamageIndicatorMinTime->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->DamageIndicatorMinTime->style = "{-fx-color:red;}";
+                            $this->DamageIndicatorMinTime->classes->add('valuewarning');
                         } else {
                             $this->DamageIndicatorMinTime->tooltipText = "Acceptable value";
-                            $this->DamageIndicatorMinTime->style = "{-fx-color:white;}";
+                            $this->DamageIndicatorMinTime->classes->remove('valuewarning');
                         }
                     } else {
                         $this->DamageIndicatorMinTimeAdd->visible = true;
                     }
-                    if( $damageindicator['MaximumTime'] != "" ) {
+                    if( $damageindicator['maximumtime'] != "" ) {
                         $this->DamageIndicatorMaxTimeAdd->visible = false;
-                        $this->DamageIndicatorMaxTime->text = $damageindicator['MaximumTime'];
-                        if ( $damageindicator['MaximumTime'] > 35 or $damageindicator['MaximumTime'] < 120 ) {
+                        $this->DamageIndicatorMaxTime->text = $damageindicator['maximumtime'];
+                        if ( $damageindicator['maximumtime'] > 35 or $damageindicator['maximumtime'] < 120 ) {
                             $this->DamageIndicatorMaxTime->tooltipText = "Unrecommended value. Element might display not correct!";
-                            $this->DamageIndicatorMaxTime->style = "{-fx-color:red;}";
+                            $this->DamageIndicatorMaxTime->classes->add('valuewarning');
                         } else {
                             $this->DamageIndicatorMaxTime->tooltipText = "Acceptable value";
-                            $this->DamageIndicatorMaxTime->style = "{-fx-color:white;}";
+                            $this->DamageIndicatorMaxTime->classes->remove('valuewarning');
                         }
                     } else {
                         $this->DamageIndicatorMaxTimeAdd->visible = true;
@@ -1155,19 +1156,19 @@ class Customize extends AbstractForm
     {    
         $hudlayout = VDF::decodeFile("$huddir\\scripts\\hudlayout.res");
         $killfeed = [
-            'fieldName' => "HudDamageIndicator",                                   
+            'fieldname' => "huddamageindicator",                                   
             'visible' => "1",
             'enabled' => "1",
-            'MinimumWidth' => "10",
-            'MaximumWidth' => "10",
-            'StartRadius' => "80",
-            'EndRadius' => "80",
-            'MinimumHeight' => "30",
-            'MaximumHeight' => "60",
-            'MinimumTime' => "1",
-            'MaximumTime' => "2",
+            'minimumwidth' => "10",
+            'maximumwidth' => "10",
+            'startradius' => "80",
+            'endradius' => "80",
+            'minimumheight' => "30",
+            'maximumheight' => "60",
+            'minimumtime' => "1",
+            'maximumtime' => "2",
         ];
-        $hudlayout['Resource/HudLayout.res']['HudDamageIndicator'] = $damageindicator;
+        $hudlayout['resource/hudlayout.res']['huddamageindicator'] = $damageindicator;
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();  
     }
 
@@ -1176,7 +1177,7 @@ class Customize extends AbstractForm
      */
     function doDamageIndicatorMinWidthAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MinimumWidth'] = "10";      
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddamageindicator']['minimumwidth'] = "10";      
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -1185,7 +1186,7 @@ class Customize extends AbstractForm
      */
     function doDamageIndicatorMaxWidthAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MaximumWidth'] = "10";      
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddamageindicator']['maximumwidth'] = "10";      
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -1194,7 +1195,7 @@ class Customize extends AbstractForm
      */
     function doDamageIndicatorStartRadiusAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['StartRadius'] = "80";      
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddamageindicator']['startradius'] = "80";      
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -1203,7 +1204,16 @@ class Customize extends AbstractForm
      */
     function doDamageIndicatorEndRadiusAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['EndRadius'] = "80";      
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddamageindicator']['endradius'] = "80";      
+        global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
+    }
+
+    /**
+     * @event DamageIndicatorMinHeightAdd.click-Left 
+     */
+    function doDamageIndicatorMinHeightAddClickLeft(UXMouseEvent $event = null)
+    {    
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddamageindicator']['minimumHhight'] = "60";      
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -1213,7 +1223,7 @@ class Customize extends AbstractForm
      */
     function doDamageIndicatorMaxHeightAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MaximumHeight'] = "60";      
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddamageindicator']['maximumheight'] = "60";      
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -1222,7 +1232,7 @@ class Customize extends AbstractForm
      */
     function doDamageIndicatorMinTimeAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MinimumTime'] = "1";      
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddamageindicator']['minimumtime'] = "1";      
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -1231,7 +1241,7 @@ class Customize extends AbstractForm
      */
     function doDamageIndicatorMaxTimeAddClickLeft(UXMouseEvent $event = null)
     {    
-        global $hudlayout; $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MaximumTime'] = "2";      
+        global $hudlayout; $hudlayout['resource/hudlayout.res']['huddamageindicator']['maximumtime'] = "2";      
         global $huddir; VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout); $this->doKillfeedUpdateButtonClickLeft();   
     }
 
@@ -1242,37 +1252,37 @@ class Customize extends AbstractForm
     {    
        $this->showPreloader();
         global $hudlayout; global $huddir;
-        if ( $hudlayout['Resource/HudLayout.res']['HudDamageIndicator'] ) {
+        if ( $hudlayout['resource/hudlayout.res']['huddamageindicator'] ) {
             if ( $this->DamageIndicatorMinWidthAdd->visible != true or trim($this->DamageIndicatorMinWidth->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MinimumWidth'] = $this->DamageIndicatorMinWidth->text;
+                $hudlayout['resource/hudlayout.res']['huddamageindicator']['minimumwidth'] = $this->DamageIndicatorMinWidth->text;
             }
             if ( $this->DamageIndicatorMaxWidthAdd->visible != true or trim($this->DamageIndicatorMaxWidth->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MaximumWidth'] = $this->DamageIndicatorMaxWidth->text;
+                $hudlayout['resource/hudlayout.res']['huddamageindicator']['maximumwidth'] = $this->DamageIndicatorMaxWidth->text;
             }
-            if ( $this->DamageIndicatorStartRadiusAdd->visible != true or trim($this->DamageIndicatorStartRadius->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['StartRadius'] = $this->DamageIndicatorStartRadius->text;
+            if ( $this->DamageIndicatorstartradiusAdd->visible != true or trim($this->DamageIndicatorstartradius->text) != "" ) {
+                $hudlayout['resource/hudlayout.res']['huddamageindicator']['startradius'] = $this->DamageIndicatorstartradius->text;
             }
-            if ( $this->DamageIndicatorEndRadiusAdd->visible != true or trim($this->DamageIndicatorEndRadius->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['EndRadius'] = $this->DamageIndicatorEndRadius->text;
+            if ( $this->DamageIndicatorendradiusAdd->visible != true or trim($this->DamageIndicatorendradius->text) != "" ) {
+                $hudlayout['resource/hudlayout.res']['huddamageindicator']['endradius'] = $this->DamageIndicatorendradius->text;
             }
             if ( $this->DamageIndicatorMinHeightAdd->visible != true or trim($this->DamageIndicatorMinHeight->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MinimumHeight'] = $this->DamageIndicatorMinHeight->text;
+                $hudlayout['resource/hudlayout.res']['huddamageindicator']['minimumheight'] = $this->DamageIndicatorMinHeight->text;
             }
             if ( $this->DamageIndicatorMaxHeightAdd->visible != true or trim($this->DamageIndicatorMaxHeight->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MaximumHeight'] = $this->DamageIndicatorMaxHeight->text;
+                $hudlayout['resource/hudlayout.res']['huddamageindicator']['maximumheight'] = $this->DamageIndicatorMaxHeight->text;
             }
             if ( $this->DamageIndicatorMaxTimeAdd->visible != true or trim($this->DamageIndicatorMaxTime->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MaximumTime'] = $this->DamageIndicatorMaxTime->text;
+                $hudlayout['resource/hudlayout.res']['huddamageindicator']['maximumtime'] = $this->DamageIndicatorMaxTime->text;
             }
             if ( $this->DamageIndicatorMinTimeAdd->visible != true or trim($this->DamageIndicatorMinTime->text) != "" ) {
-                $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['MinimumTime'] = $this->DamageIndicatorMinTime->text;
+                $hudlayout['resource/hudlayout.res']['huddamageindicator']['minimumtime'] = $this->DamageIndicatorMinTime->text;
             }
 
             if ( $this->DamageIndicatorVisibilityAdd->visible != true ) {
                 if ( $this->DamageIndicatorVisibility->selected == true ) {
-                    $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['visible'] = "1";
+                    $hudlayout['resource/hudlayout.res']['huddamageindicator']['visible'] = "1";
                 } else {
-                    $hudlayout['Resource/HudLayout.res']['HudDamageIndicator']['visible'] = "0";    
+                    $hudlayout['resource/hudlayout.res']['huddamageindicator']['visible'] = "0";    
                 }
             }
             VDF::encodeFile("$huddir\\scripts\\hudlayout.res", $hudlayout);  
@@ -1281,8 +1291,6 @@ class Customize extends AbstractForm
         }
         $this->hidePreloader();
     }
-
-
     
     
 

@@ -1,6 +1,7 @@
 <?php
 namespace app\forms;
 
+use php\util\Regex;
 use app\modules\VDF;
 use php\io\File;
 use php\lib\str;
@@ -25,6 +26,16 @@ class Settings extends AbstractForm
     function doSettingsProfilesEditClickLeft(UXMouseEvent $event = null)
     {    
         // Not working right now
+    }
+
+    /**
+     * @event SettingsTF2DirectorySave.click-Left 
+     */
+    function doSettingsTF2DirectorySaveClickLeft(UXMouseEvent $event = null)
+    {    
+        global $gamedirstatus;
+        $gamedirstatus = "false";
+        $this->form('Main')->doShow();
     }
 
 
